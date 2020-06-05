@@ -28,7 +28,7 @@ Business Scenario:
 
 # Architecture
 
-![image-20200605145034827](/Users/muralidhar/Murali/Work/Code Patterns/2CodeRepos/2020/build-an-integration-application-using-ibm-cloud-pak-for-integration/images/image-20200605145034827.png)
+![image-20200605145034827](./images/image-20200605145034827.png)
 
 # Flow
 
