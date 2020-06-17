@@ -279,7 +279,9 @@ When you have an IBM ID, sign in at https://cloud.ibm.com (Depending on your com
 
 Once you’re in, you’ll be presented with the cloud dashboard showing which services you have provisioned:
 
-<img src="./images/image-20200609204306444.png" alt="image-20200609204306444" style="zoom:67%;"  align="left" />
+<img src="./images/image-20200609204306444.png" alt="image-20200609204306444" style="zoom: 50%;"  align="left" />
+
+
 
 (You may not see this many services, clusters etc – the lab authors have many things in their IBM Cloud accounts.)
 
@@ -293,15 +295,21 @@ You’ll see a list of services (if not, click on `services`).
 
 Check the `AI` filter checkbox on the left to filter for Watson services. (You can also search for them by name)
 
-![image-20200609204553080](./images/image-20200609204553080.png)
+<img src="./images/image-20200609204553080.png" alt="image-20200609204553080" style="zoom: 50%;"  align="left" />
+
+
 
 Scroll down and click on the `Visual Recognition` tile.
 
 <img src="./images/image-20200609213928692.png" alt="image-20200609213928692" style="zoom:50%;"  align="left"  />
 
+
+
 Inside, you’ll be able create a lite plan (free) instance as shown in the screenshot below (ignore the warning on our screenshot about only being able to have one lite plan per account– that’s because we already had one lite instance set up in the lab authors’ IBM Cloud Account)
 
-<img src="./images/image-20200609214115913.png" alt="image-20200609214115913" style="zoom:67%;"  align="left" />
+<img src="./images/image-20200609214115913.png" alt="image-20200609214115913" style="zoom:50%;"  align="left" />
+
+
 
 Select the free `lite` plan and provision the service.
 
