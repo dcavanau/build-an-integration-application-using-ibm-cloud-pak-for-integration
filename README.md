@@ -28,7 +28,7 @@ Business Scenario:
 
 # Architecture
 
-<img src="./images/image-20200605145034827.png" alt="image-20200605145034827" style="zoom:67%;" />
+<img src="./images/image-20200605145034827.png" alt="image-20200605145034827" width="67%" />
 
 
 
@@ -271,7 +271,7 @@ Once you have an account, all of the Watson services have ‘lite’ plans which
 
 The IBM Cloud can be accessed at https://cloud.ibm.com
 
-<img src="./images/image-20200609174730528.png" alt="image-20200609174730528" style="zoom:50%;" />
+<img src="./images/image-20200609174730528.png" alt="image-20200609174730528" width="50%" />
 
 If you don’t have an IBM ID (You can use the one you used to register for Think!) then click ‘Create an account’ – all you need is an email, you don’t need a credit card.
 
@@ -279,7 +279,7 @@ When you have an IBM ID, sign in at https://cloud.ibm.com (Depending on your com
 
 Once you’re in, you’ll be presented with the cloud dashboard showing which services you have provisioned:
 
-<img src="./images/image-20200609204306444.png" alt="image-20200609204306444" style="zoom: 50%;"  />
+<img src="./images/image-20200609204306444.png" alt="image-20200609204306444" width=" 50%" />
 
 
 (You may not see this many services, clusters etc – the lab authors have many things in their IBM Cloud accounts.)
@@ -294,21 +294,15 @@ You’ll see a list of services (if not, click on `services`).
 
 Check the `AI` filter checkbox on the left to filter for Watson services. (You can also search for them by name)
 
-<img src="./images/image-20200609204553080.png" alt="image-20200609204553080" style="zoom: 50%;"  />
-
-
+<img src="./images/image-20200609204553080.png" alt="image-20200609204553080" width=" 50%" />
 
 Scroll down and click on the `Visual Recognition` tile.
 
-
-
-<img src="./images/image-20200609213928692.png" alt="image-20200609213928692" style="zoom:50%;"   />
-
-
+<img src="./images/image-20200609213928692.png" alt="image-20200609213928692" width="50%" />
 
 Inside, you’ll be able create a lite plan (free) instance as shown in the screenshot below (ignore the warning on our screenshot about only being able to have one lite plan per account– that’s because we already had one lite instance set up in the lab authors’ IBM Cloud Account)
 
-<img src="./images/image-20200609214115913.png" alt="image-20200609214115913" style="zoom:50%;"  />
+<img src="./images/image-20200609214115913.png" alt="image-20200609214115913" width="50%" />
 
 Select the free `lite` plan and provision the service.
 
@@ -316,15 +310,15 @@ You can change the service name to something more memorable if you wish.
 
 Once you create the service, you’ll be able to see it in your cloud dashboard (to get to the cloud Dashboard, click the `hamburger` menu at the top left of the screen and select `Dashboard`
 
-<img src="./images/image-20200609222149224.png" alt="image-20200609222149224" style="zoom:80%;"  />
+<img src="./images/image-20200609222149224.png" alt="image-20200609222149224" width="80%" />
 
  Look under `Services` and you’ll find your newly created service (you can see a number of services in our screenshot below – we’ve renamed ours to add `Dallas` on the end but yours will have a similar name)     
 
-<img src="./images/image-20200609222405756.png" alt="image-20200609222405756" style="zoom:67%;" /> 
+<img src="./images/image-20200609222405756.png" alt="image-20200609222405756" width="67%" /> 
 
 Click on your new service and you’ll see the `Manage` tab:
 
-<img src="./images/image-20200609222439728.png" alt="image-20200609222439728" style="zoom:67%;"  />
+<img src="./images/image-20200609222439728.png" alt="image-20200609222439728" width="67%" />
 
 The API key and URL are what we are going to need to integrate with the service. You can click `Show credentials` and copy/paste them somewhere for later use in this lab or you can click `Download` and they will be downloaded as a text file for you.
 
@@ -332,7 +326,7 @@ You’ll next need to do similar for `Language Translator`. It also has `Lite` p
 
 Make sure you obtain the URL and API keys (in `credentials`) for all of these Watson services – we’ll be needing them later. You obtain the URL and API keys for both the services in the same way.
 
-<img src="./images/image-20200609223016557.png" alt="image-20200609223016557" style="zoom:67%;"  />
+<img src="./images/image-20200609223016557.png" alt="image-20200609223016557" width="67%" />
 
 
 
@@ -344,7 +338,7 @@ We will need a **developer** account to use for testing – if you already have 
 
 Go to https://developer.salesforce.com and click on `sign up`
 
-<img src="./images/image-20200609223448761.png" alt="image-20200609223448761"   style="zoom:80%;" />
+<img src="./images/image-20200609223448761.png" alt="image-20200609223448761"   width="80%" />
 
 Not that this is NOT the same as `salesforce.com -> try for free`. **You will need a developer account to use this lab**. You can use a webmail email address to sign up if you wish, rather than your company one.
 
@@ -413,7 +407,7 @@ You can see that we have App Connect Designer (the tooling for building integrat
 
 At any time, we can use the menu to navigate between these capabilities, as well as using the platform home screen. Use the `hamburger` menu at the top left like so:
 
-<img src="./images/image-20200615231615577.png" alt="image-20200615231615577" style="zoom:47%;" />
+<img src="./images/image-20200615231615577.png" alt="image-20200615231615577" width="47%" />
 
 
 
@@ -465,7 +459,7 @@ You’ll see that the connector expands and shows you the actions available for 
 
 ICP4i connectors are smart connectors and are metadata driven – you don’t need to know what functions and data are in the endpoint – the connectors will usually show them to you.
 
-<img src="./images/image-20200616093644485.png" alt="image-20200616093644485" style="zoom:50%;" />
+<img src="./images/image-20200616093644485.png" alt="image-20200616093644485" width="50%" />
 
 Click on `Connect`
 
@@ -477,7 +471,7 @@ You’ll now be asked for the API key that you kept safe from before: Enter it h
 
 Make sure you have the right one – the one for e.g. Tone Analyzer will not work for Visual Recognition.
 
-<img src="./images/image-20200616094137910.png" alt="image-20200616094137910" style="zoom:50%;" />
+<img src="./images/image-20200616094137910.png" alt="image-20200616094137910" width="50%" />
 
 (Hint: you can use the ‘eye’ button to show the API key to check it’s correct)
 
@@ -485,7 +479,7 @@ If you’ve ‘forgotten’ your API key, go back to the service you created in 
 
 If all goes well, (i.e. you’ve entered your key correctly), a connector account will be created for you – that’s it! You’ve added visual recognition capability to your integration
 
-<img src="./images/image-20200616095925571.png" alt="image-20200616095925571" style="zoom:50%;" />
+<img src="./images/image-20200616095925571.png" alt="image-20200616095925571" width="50%" />
 
 IMPORTANT: DON’T MOVE ON YET! You’ll see `Account 1` as the name of the account.
 
@@ -495,49 +489,49 @@ ICP4i lets you have multiple accounts for connecting to each type of system. For
 
 To rename your account, Click the three dots menu and click `rename account`
 
-<img src="./images/image-20200616100321676.png" alt="image-20200616100321676" style="zoom:50%;" />
+<img src="./images/image-20200616100321676.png" alt="image-20200616100321676" width="50%" />
 
 In the dialog box, name the account `App Connect Trial` (exactly as shown – capitals on the first letter of the words, spaces between the words) and click `Rename Account` as shown below,
 
-<img src="./images/image-20200616100427281.png" alt="image-20200616100427281" style="zoom:50%;" />
+<img src="./images/image-20200616100427281.png" alt="image-20200616100427281" width="50%" />
 
 You connector should now look like this:
 
-<img src="./images/image-20200616100502762.png" alt="image-20200616100502762" style="zoom:50%;" />
+<img src="./images/image-20200616100502762.png" alt="image-20200616100502762" width="50%" />
 
 OK, we have our Visual Recognition sorted – let’s do the next two Watson connectors:
 
 Click on `IBM Watson Tone Analyzer` and click `Connect`
 
-<img src="./images/image-20200616100607006.png" alt="image-20200616100607006" style="zoom:50%;" />
+<img src="./images/image-20200616100607006.png" alt="image-20200616100607006" width="50%" />
 
 Select the Local connector (if asked – you may not be) and click Continue
 
-<img src="./images/image-20200616100752616.png" alt="image-20200616100752616" style="zoom:50%;" />
+<img src="./images/image-20200616100752616.png" alt="image-20200616100752616" width="50%" />
 
 For this connector, we’ll need the URL and the API key that we got earlier: Enter them in the dialog below – (you won’t need the User name and Password). 
 
 Note: Your URL may be different to our screenshot – it depends in which cloud region your service is running. Click `Connect`
 
-<img src="./images/image-20200616100952807.png" alt="image-20200616100952807" style="zoom:50%;" />
+<img src="./images/image-20200616100952807.png" alt="image-20200616100952807" width="50%" />
 
 And we’re connected!
 
 IMPORTANT – FOR THE TASK, RENAME THE ACCOUNT to `App Connect Trial`. (use the three dots menu and click `Rename Account` )
 
-<img src="./images/image-20200616101114113.png" alt="image-20200616101114113" style="zoom:50%;" />
+<img src="./images/image-20200616101114113.png" alt="image-20200616101114113" width="50%" />
 
 Your connector should look like this:
 
-<img src="./images/image-20200616101208091.png" alt="image-20200616101208091" style="zoom:50%;" />
+<img src="./images/image-20200616101208091.png" alt="image-20200616101208091" width="50%" />
 
 Finally, let’s connect to the Watson Language Translator – it’s very similar:
 
-<img src="./images/image-20200616101249851.png" alt="image-20200616101249851" style="zoom:50%;" />
+<img src="./images/image-20200616101249851.png" alt="image-20200616101249851" width="50%" />
 
 Click `Connect` and select `Local` for the connector location (if asked) then enter your URL and API key (note your URL may be different from our screenshot depending on the region of your Watson services)
 
-<img src="./images/image-20200616103057038.png" alt="image-20200616103057038" style="zoom:50%;" />
+<img src="./images/image-20200616103057038.png" alt="image-20200616103057038" width="50%" />
 
 Click `Connect`
 
@@ -545,7 +539,7 @@ IMPORTANT – FOR THIS CODE PATTERN, RENAME THE ACCOUNT to `App Connect Trial`. 
 
 It should look like this:
 
-<img src="./images/image-20200616103219649.png" alt="image-20200616103219649" style="zoom:50%;" />
+<img src="./images/image-20200616103219649.png" alt="image-20200616103219649" width="50%" />
 
 Why is it important to rename the accounts? We’re going to import an integration flow to save you some typing and clicking. This flow is configured to look for connector accounts named `App Connect Trial`
 
@@ -561,11 +555,11 @@ Scroll down to the Salesforce connector. There may be multiple types of salesfor
 
 Click `Add a new account` if there are existing accounts, or just click `Connect` if this is the first one.
 
-<img src="./images/image-20200616103600066.png" alt="image-20200616103600066" style="zoom:50%;" />
+<img src="./images/image-20200616103600066.png" alt="image-20200616103600066" width="50%" />
 
 Select a Local connector location (if asked – you may not be asked) and click ‘Continue’
 
-<img src="./images/image-20200616103813680.png" alt="image-20200616103813680" style="zoom:50%;" />
+<img src="./images/image-20200616103813680.png" alt="image-20200616103813680" width="50%" />
 
 You’ll now be asked for the Salesforce credentials – how do you get these? Follow the steps below. 
 
@@ -573,7 +567,7 @@ Salesforce needs more than just your userid and password – it needs a client I
 
 The fields we need are shown below
 
-<img src="./images/image-20200616103931845.png" alt="image-20200616103931845" style="zoom:50%;" />
+<img src="./images/image-20200616103931845.png" alt="image-20200616103931845" width="50%" />
 
 You will require admin level access to your Salesforce account. 
 
@@ -593,7 +587,7 @@ Insert the **login URL** into the connector account form as shown below:
 
 IMPORTANT: You MUST enter the ‘https://’ part as well – it won’t work if you just copy/paste from the salesforce screen e.g. “um1.salesforce.com” will **not** work. “https://um1.salesforce.com” will!
 
-<img src="./images/image-20200616104134388.png" alt="image-20200616104134388" style="zoom:50%;" />
+<img src="./images/image-20200616104134388.png" alt="image-20200616104134388" width="50%" />
 
 Next we will need to **retrieve Security Token**. For this click on your user profile and select the Settings option in the profile panel.
 
@@ -603,7 +597,7 @@ Under Settings, find and click the “Reset Security Token” option
 
 (you may need to go to ‘Switch to lightning experience’ to see this)
 
-<img src="./images/image-20200616111047905.png" alt="image-20200616111047905" style="zoom:50%;" />(On the top right if you see it)
+<img src="./images/image-20200616111047905.png" alt="image-20200616111047905" width="50%" />(On the top right if you see it)
 
 
 
@@ -619,7 +613,7 @@ For example if you Salesforce password is 'myGreatPassword’ and your Salesforc
 
 `myGreatPassword2325jsdhew4312hs534dh` in the ‘password’ field.
 
-<img src="./images/image-20200616111407934.png" alt="image-20200616111407934" style="zoom:50%;" />
+<img src="./images/image-20200616111407934.png" alt="image-20200616111407934" width="50%" />
 
 Next we will retrieve the **Client ID and Secret**
 
@@ -656,13 +650,13 @@ And then click on Save.
 
 Use **Consumer Key and Secret as Client ID and Client Secret** respectively as needed in the connector account UI as follows:
 
-<img src="./images/image-20200616112415309.png" alt="image-20200616112415309" style="zoom:50%;" />
+<img src="./images/image-20200616112415309.png" alt="image-20200616112415309" width="50%" />
 
 Click Connect – you should see your account created!
 
 IMPORTANT – After all that, we need to rename our account! Don’t forget to use the three dots an rename our account to `App Connect Trial` as shown below.
 
-<img src="./images/image-20200616112510301.png" alt="image-20200616112510301" style="zoom:50%;" />
+<img src="./images/image-20200616112510301.png" alt="image-20200616112510301" width="50%" />
 
 Just as an aside, look at the sheer amount of data and functions available through the connector – you can expand them to see what the actions are. As the connectors are metadata driven, if you customize Salesforce with extra or customized fields, the connectors will pick them up automatically.
 
@@ -692,13 +686,13 @@ https://raw.githubusercontent.com/IBM/build-an-integration-application-using-ibm
 
 (The %20 are how spaces are represented in a URL – they flow name has spaces in it, not %20)
 
-<img src="./images/image-20200616123416889.png" alt="image-20200616123416889" style="zoom:30%;" />
+<img src="./images/image-20200616123416889.png" alt="image-20200616123416889" width="30%" />
 
 (This is the address of the ‘Car Insurance Cognitive API Lab.yaml’ flow in our git repository)
 
 Click `Add file`. Then click `Import` 
 
-<img src="./images/image-20200616122815425.png" alt="image-20200616122815425" style="zoom:30%;" />
+<img src="./images/image-20200616122815425.png" alt="image-20200616122815425" width="30%" />
 
 
 
@@ -720,7 +714,7 @@ Click `Start API` on the three dot menu at the top right:
 
 Your API should change to a status of ‘Running’ like below
 
-<img src="./images/image-20200616180059747.png" alt="image-20200616180059747" style="zoom:50%;" />
+<img src="./images/image-20200616180059747.png" alt="image-20200616180059747" width="50%" />
 
 Now our flow is running, we need to test it.
 
@@ -828,7 +822,7 @@ To see the password, click the ‘Eye’ icon. To copy it to the clipboard, clic
 
 This test sends a picture with a chicken – there is no car in it so we should get an error
 
-<img src="./images/image-20200617145855955.png" alt="image-20200617145855955" style="zoom:50%;" />
+<img src="./images/image-20200617145855955.png" alt="image-20200617145855955" width="50%" />
 
 To run the test, type (including the first dot and slash) ./demotestchicken.sh
 
@@ -862,11 +856,11 @@ The expected response is something like:
 
 If you get `unexpected end of file`, double check that your API flow is started!
 
-<img src="./images/image-20200617150623704.png" alt="image-20200617150623704" style="zoom:50%;" />
+<img src="./images/image-20200617150623704.png" alt="image-20200617150623704" width="50%" />
 
 ### 8.2 Test2: “Subaru SUV Picture” – demotestsubaru.sh
 
-<img src="./images/image-20200617150715075.png" alt="image-20200617150715075" style="zoom:50%;" />
+<img src="./images/image-20200617150715075.png" alt="image-20200617150715075" width="50%" />
 
 The request is:
 
@@ -906,7 +900,7 @@ Note how this has created a case in Salesforce – you can go to Salesforce and 
 
 Click the 9 dots at the top left:
 
-<img src="./images/image-20200617152151162.png" alt="image-20200617152151162" style="zoom:50%;" />
+<img src="./images/image-20200617152151162.png" alt="image-20200617152151162" width="50%" />
 
 In ‘Search Apps and items, type ‘case’ then click ‘Cases’
 
@@ -920,7 +914,7 @@ Then you can see your case – with the Subaru photo in it!
 
 Click on the ‘CarPicture.jpg’ to see the attached photo.
 
-<img src="./images/image-20200617152403813.png" alt="image-20200617152403813" style="zoom:50%;" />
+<img src="./images/image-20200617152403813.png" alt="image-20200617152403813" width="50%" />
 
 
 
@@ -936,11 +930,11 @@ When we deploy, it will create a 3 HA replica container pods running on OpenShif
 
 To export the .bar file, go into the designer dashboard and click the ‘…’ menu on the integration tile and click ‘Export…’
 
-<img src="./images/image-20200617152533827.png" alt="image-20200617152533827" style="zoom:50%;" />
+<img src="./images/image-20200617152533827.png" alt="image-20200617152533827" width="50%" />
 
 You’ll get a dialog box. Select ‘Export for integration server (BAR)’ and click ‘Export’
 
-<img src="./images/image-20200617152600995.png" alt="image-20200617152600995" style="zoom:50%;" />
+<img src="./images/image-20200617152600995.png" alt="image-20200617152600995" width="50%" />
 
 The browser may prompt you for a download location – otherwise it will place the ‘Car_Insurance_Cognitive_API_Lab_Short.bar’ file in the Downloads directory.
 
@@ -952,7 +946,7 @@ That’s it – we now have our executable flow – let’s see what we need to 
 
 From the menu, click ‘App Connect’ and then click ‘ace-1’:  This is the runtime, and not the tooling.
 
-<img src="./images/image-20200617152812060.png" alt="image-20200617152812060" style="zoom:50%;" />
+<img src="./images/image-20200617152812060.png" alt="image-20200617152812060" width="50%" />
 
 You’ll then be taken to the App Connect Dashboard – at the moment, there are no integrations here:
 
@@ -964,19 +958,19 @@ We need to create an integration server to run our integration. An integration s
 
 Click ‘Create Server’
 
-<img src="./images/image-20200617153024018.png" alt="image-20200617153024018" style="zoom:50%;" />
+<img src="./images/image-20200617153024018.png" alt="image-20200617153024018" width="50%" />
 
 In the dialog box, click ‘Add a BAR file’ (the + sign in the circle)
 
 Browse to the location of the ‘Car_Insurance_Cognitive_API_Lab.bar’ file that you exported from designer and select it with ‘Open’
 
-<img src="./images/image-20200617153057914.png" alt="image-20200617153057914" style="zoom:50%;" />
+<img src="./images/image-20200617153057914.png" alt="image-20200617153057914" width="50%" />
 
 – then hit continue on the dialog as below:
 
-<img src="./images/image-20200617153128715.png" alt="image-20200617153128715" style="zoom:50%;" />
+<img src="./images/image-20200617153128715.png" alt="image-20200617153128715" width="50%" />
 
-<img src="./images/image-20200617153146619.png" alt="image-20200617153146619" style="zoom:50%;"  />
+<img src="./images/image-20200617153146619.png" alt="image-20200617153146619" width="50%" />
 
 We’re going to create an integration server to run our integration. Before we can do this, we need to download the configuration package.
 
@@ -984,7 +978,7 @@ The configuration package is a template where we can put all of our credentials 
 
  Now click ‘Next’ – you’ll be asked what kind of server you want to create: Choose “Designer” then click ‘Configuration’
 
-<img src="./images/image-20200617153220335.png" alt="image-20200617153220335" style="zoom:67%;"   />
+<img src="./images/image-20200617153220335.png" alt="image-20200617153220335" width="67%" />
 
 You’ll see the following configuration options:
 
@@ -1000,7 +994,7 @@ Select “App Connect Enterprise only” – the other options are if you want t
 
 We can use local connectors, or both cloud and local connectors: We’ll select ‘local connectors only’ as below:
 
-<img src="./images/image-20200617153332096.png" alt="image-20200617153332096" style="zoom:67%;" />
+<img src="./images/image-20200617153332096.png" alt="image-20200617153332096" width="67%" />
 
 ### 9.2.4 Docker images
 
@@ -1012,7 +1006,7 @@ The deployment is going to create some pods with App Connect container images �
 
 This is the Kubernetes secret that we will create to store the userids and passwords: We will give it a name now: we will call ours carrepaircreds01
 
-<img src="./images/image-20200617153904138.png" alt="image-20200617153904138" style="zoom:50%;"  />
+<img src="./images/image-20200617153904138.png" alt="image-20200617153904138" width="50%" />
 
 A Kubernetes secret is a way of storing sensitive information in Kubernetes and Openshift. In this way, we keep our connection credentials separate from our integration logic.
 
@@ -1024,13 +1018,13 @@ When you refresh, you should see this in your dashboard:
 
 You may find that you initially see what looks like an error – this is the cloud pak spinning up 3 pods of the integration server – it won’t show a green tick until all the pods are running. Give it a few minutes or so and refresh your browser. You can leave it in this state for a bit and get on with the next part of the lab if you wish.
 
-<img src="./images/image-20200617154008866.png" alt="image-20200617154008866" style="zoom:50%;"  />
+<img src="./images/image-20200617154008866.png" alt="image-20200617154008866" width="50%" />
 
 At this point, the integration is running on the cloud pak however, it can’t actually connect to anything – it doesn’t have any credentials to connect to Salesforce or Watson.
 
 Click the tile and you’ll see the following:
 
-<img src="./images/image-20200617154032834.png" alt="image-20200617154032834" style="zoom:50%;"  />
+<img src="./images/image-20200617154032834.png" alt="image-20200617154032834" width="50%" />
 
 Click again, and you’ll drill down further and see the following:
 
@@ -1058,17 +1052,17 @@ ICP4i gives you a pre-built configuration package to help you create your secret
 
 Earlier on, we downloaded this package from this dialog box:
 
-<img src="./images/image-20200617154242471.png" alt="image-20200617154242471" style="zoom:50%;"  />
+<img src="./images/image-20200617154242471.png" alt="image-20200617154242471" width="50%" />
 
 Unzip the downloaded file and you’ll see the files within:
 
-<img src="./images/image-20200617154410725.png" alt="image-20200617154410725" style="zoom:67%;"  />
+<img src="./images/image-20200617154410725.png" alt="image-20200617154410725" width="67%" />
 
 The one we want to focus on is called credentials.yaml - we need to put our credentials in there.
 
 Click on ‘Extract’ to extract the files from the archive. We’re going to leave it in ‘Downloads’ for this example, but you can place it where you wish – when the ‘where to extract’ dialog box appears, click ‘Extract’ again.
 
-<img src="./images/image-20200617154435958.png" alt="image-20200617154435958" style="zoom:50%;"  />
+<img src="./images/image-20200617154435958.png" alt="image-20200617154435958" width="50%" />
 
 At this point, all the files will be in the Downloads directory.
 
@@ -1078,11 +1072,11 @@ There is a template/sample credentials file available at https://github.com/garr
 
 You can see it here (ignore the ServiceNow details – we will use them later)
 
-<img src="./images/image-20200617154546514.png" alt="image-20200617154546514" style="zoom: 67%;"  />
+<img src="./images/image-20200617154546514.png" alt="image-20200617154546514" width=" 67%" />
 
 You can either download this file into the downloads directory, or just copy and paste the contents into the editor like so:
 
-<img src="./images/image-20200617154615939.png" alt="image-20200617154615939" style="zoom:67%;"  />
+<img src="./images/image-20200617154615939.png" alt="image-20200617154615939" width="67%" />
 
 We’re now going to overwrite the credentials with those that we created earlier.
 
@@ -1096,7 +1090,7 @@ Contents shown below:
 
 Remember that this is a .yaml file so spaces/tabs etc are crucial – don’t change them from the template:
 
-<img src="./images/image-20200617154639425.png" alt="image-20200617154639425" style="zoom:67%;"  />
+<img src="./images/image-20200617154639425.png" alt="image-20200617154639425" width="67%" />
 
 Click ‘Save’ on the editor and close it.
 
@@ -1106,7 +1100,7 @@ To run the script, we need to set up our environment to that it points to our IC
 
 In the FireFox browser, go back to the Cloud Pak Platform Navigator and select ‘Cloud Pak Foundation” from the hamburger menu.
 
-<img src="./images/image-20200617154657968.png" alt="image-20200617154657968"   />
+<img src="./images/image-20200617154657968.png" alt="image-20200617154657968" />
 
 Now click on the ‘face’ icon on the top right and click on the ‘configure client’ cogwheel in the menu
 
@@ -1116,7 +1110,7 @@ You’ll get a series of commands to run on the desktop terminal:
 
 Click the ‘Copy to clipboard’ icon (overlapping squares)
 
-<img src="./images/image-20200617154802393.png" alt="image-20200617154802393" style="zoom:67%;"  />
+<img src="./images/image-20200617154802393.png" alt="image-20200617154802393" width="67%" />
 
 We now have the commands we need – we’re now going to paste them into the terminal.
 
@@ -1154,7 +1148,7 @@ This will create the Kubernetes secret called ‘carrepaircreds01’ into the cl
 
 If we go back to the App Connect Dashboard, we can see that our integration should be running – and be running with 3 highly available replicas.
 
-<img src="./images/image-20200617155015044.png" alt="image-20200617155015044" style="zoom:67%;"  />
+<img src="./images/image-20200617155015044.png" alt="image-20200617155015044" width="67%" />
 
 This means we now have our integration running on our cloud pak server.
 
@@ -1166,11 +1160,11 @@ We’ll use the same scrips we used to test designer – we’ll just change the
 
 Click on our carrepair01 integration tile on the dashboard – you’ll see this:
 
-<img src="./images/image-20200617155054950.png" alt="image-20200617155054950" style="zoom:67%;"  />
+<img src="./images/image-20200617155054950.png" alt="image-20200617155054950" width="67%" />
 
 Click on this and you’ll see:
 
-<img src="./images/image-20200617155111540.png" alt="image-20200617155111540" style="zoom:67%;"  />
+<img src="./images/image-20200617155111540.png" alt="image-20200617155111540" width="67%" />
 
 The ‘REST API Base URL’ gives us the base URL variable we need.
 
