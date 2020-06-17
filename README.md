@@ -279,7 +279,7 @@ When you have an IBM ID, sign in at https://cloud.ibm.com (Depending on your com
 
 Once you’re in, you’ll be presented with the cloud dashboard showing which services you have provisioned:
 
-<img src="/Users/muralidhar/Murali/Work/Code Patterns/2CodeRepos/2020/build-an-integration-application-using-ibm-cloud-pak-for-integration/images/image-20200609204306444.png" alt="image-20200609204306444" style="zoom:67%;"  align="left" />
+<img src="./images/image-20200609204306444.png" alt="image-20200609204306444" style="zoom:67%;"  align="left" />
 
 (You may not see this many services, clusters etc – the lab authors have many things in their IBM Cloud accounts.)
 
@@ -297,11 +297,11 @@ Check the `AI` filter checkbox on the left to filter for Watson services. (You c
 
 Scroll down and click on the `Visual Recognition` tile.
 
-<img src="/Users/muralidhar/Murali/Work/Code Patterns/2CodeRepos/2020/build-an-integration-application-using-ibm-cloud-pak-for-integration/images/image-20200609213928692.png" alt="image-20200609213928692" style="zoom:50%;"  align="left"  />
+<img src="./images/image-20200609213928692.png" alt="image-20200609213928692" style="zoom:50%;"  align="left"  />
 
 Inside, you’ll be able create a lite plan (free) instance as shown in the screenshot below (ignore the warning on our screenshot about only being able to have one lite plan per account– that’s because we already had one lite instance set up in the lab authors’ IBM Cloud Account)
 
-<img src="/Users/muralidhar/Murali/Work/Code Patterns/2CodeRepos/2020/build-an-integration-application-using-ibm-cloud-pak-for-integration/images/image-20200609214115913.png" alt="image-20200609214115913" style="zoom:67%;"  align="left" />
+<img src="./images/image-20200609214115913.png" alt="image-20200609214115913" style="zoom:67%;"  align="left" />
 
 Select the free `lite` plan and provision the service.
 
@@ -309,15 +309,15 @@ You can change the service name to something more memorable if you wish.
 
 Once you create the service, you’ll be able to see it in your cloud dashboard (to get to the cloud Dashboard, click the `hamburger` menu at the top left of the screen and select `Dashboard`
 
-<img src="/Users/muralidhar/Murali/Work/Code Patterns/2CodeRepos/2020/build-an-integration-application-using-ibm-cloud-pak-for-integration/images/image-20200609222149224.png" alt="image-20200609222149224" style="zoom:80%;"  align="left" />
+<img src="./images/image-20200609222149224.png" alt="image-20200609222149224" style="zoom:80%;"  align="left" />
 
  Look under `Services` and you’ll find your newly created service (you can see a number of services in our screenshot below – we’ve renamed ours to add `Dallas` on the end but yours will have a similar name)     
 
-<img src="/Users/muralidhar/Murali/Work/Code Patterns/2CodeRepos/2020/build-an-integration-application-using-ibm-cloud-pak-for-integration/images/image-20200609222405756.png" alt="image-20200609222405756" style="zoom:67%;" /> 
+<img src="./images/image-20200609222405756.png" alt="image-20200609222405756" style="zoom:67%;" /> 
 
 Click on your new service and you’ll see the `Manage` tab:
 
-<img src="/Users/muralidhar/Murali/Work/Code Patterns/2CodeRepos/2020/build-an-integration-application-using-ibm-cloud-pak-for-integration/images/image-20200609222439728.png" alt="image-20200609222439728" style="zoom:67%;"  align="left" />
+<img src="./images/image-20200609222439728.png" alt="image-20200609222439728" style="zoom:67%;"  align="left" />
 
 The API key and URL are what we are going to need to integrate with the service. You can click `Show credentials` and copy/paste them somewhere for later use in this lab or you can click `Download` and they will be downloaded as a text file for you.
 
@@ -325,7 +325,7 @@ You’ll next need to do similar for `Language Translator`. It also has `Lite` p
 
 Make sure you obtain the URL and API keys (in `credentials`) for all of these Watson services – we’ll be needing them later. You obtain the URL and API keys for both the services in the same way.
 
-<img src="/Users/muralidhar/Murali/Work/Code Patterns/2CodeRepos/2020/build-an-integration-application-using-ibm-cloud-pak-for-integration/images/image-20200609223016557.png" alt="image-20200609223016557" style="zoom:67%;"  align="left" />
+<img src="./images/image-20200609223016557.png" alt="image-20200609223016557" style="zoom:67%;"  align="left" />
 
 
 
@@ -337,7 +337,7 @@ We will need a **developer** account to use for testing – if you already have 
 
 Go to https://developer.salesforce.com and click on `sign up`
 
-<img src="/Users/muralidhar/Murali/Work/Code Patterns/2CodeRepos/2020/build-an-integration-application-using-ibm-cloud-pak-for-integration/images/image-20200609223448761.png" alt="image-20200609223448761"  align="left" style="zoom:80%;" />
+<img src="./images/image-20200609223448761.png" alt="image-20200609223448761"  align="left" style="zoom:80%;" />
 
 Not that this is NOT the same as `salesforce.com -> try for free`. **You will need a developer account to use this lab**. You can use a webmail email address to sign up if you wish, rather than your company one.
 
@@ -347,7 +347,7 @@ Once you have a salesforce developer account, log in to check it – you’ll ge
 
 (Remember to log in at your salesforce developer/instance URL, not just at salesforce.com)
 
-<img src="/Users/muralidhar/Murali/Work/Code Patterns/2CodeRepos/2020/build-an-integration-application-using-ibm-cloud-pak-for-integration/images/image-20200609223649581.png" alt="image-20200609223649581" align="left" />
+<img src="./images/image-20200609223649581.png" alt="image-20200609223649581" align="left" />
 
 You will require admin level access to your Salesforce account.
 
@@ -371,14 +371,14 @@ Refer to [Provisioning.md](./Provisioning.md) for CP4I set up instructions.
 
 ### 5.1 Accessing CP4I
 
-- Login to your IBM Cloud dashboard and click `Schematics workspaces`![image-20200615171009495](/Users/muralidhar/Murali/Work/Code Patterns/2CodeRepos/2020/build-an-integration-application-using-ibm-cloud-pak-for-integration/images/image-20200615171009495.png
+- Login to your IBM Cloud dashboard and click `Schematics workspaces`![image-20200615171009495](./images/image-20200615171009495.png
 - Scroll down to the `Schematics workspaces` section and click on the workspace you created
 
-![image-20200615225236641](/Users/muralidhar/Murali/Work/Code Patterns/2CodeRepos/2020/build-an-integration-application-using-ibm-cloud-pak-for-integration/images/image-20200615225236641.png)
+![image-20200615225236641](./images/image-20200615225236641.png)
 
 - Click on the `Offering dashboard` 
 
-![image-20200615225422040](/Users/muralidhar/Murali/Work/Code Patterns/2CodeRepos/2020/build-an-integration-application-using-ibm-cloud-pak-for-integration/images/image-20200615225422040.png)
+![image-20200615225422040](./images/image-20200615225422040.png)
 
 If you see any certificate issue, you can select to proceed to unsafe website/link. You’ll be presented with a login screen to CP4I. Use `admin` as username and the password that you set while following `Provisioning` instructions. Click on `Login`. 
 
@@ -390,13 +390,13 @@ Welcome to ICP4i! You’re now at the home screen showing all the capabilities o
 
 We’re going to be using API Connect and App Connect for this exercise.
 
-![image-20200615230600574](/Users/muralidhar/Murali/Work/Code Patterns/2CodeRepos/2020/build-an-integration-application-using-ibm-cloud-pak-for-integration/images/image-20200615230600574.png)
+![image-20200615230600574](./images/image-20200615230600574.png)
 
 
 
 Click `View instances` to see the capabilities added in CP4I instance using the option `demoPreparation` while installing CP4I.
 
-![image-20200615231154274](/Users/muralidhar/Murali/Work/Code Patterns/2CodeRepos/2020/build-an-integration-application-using-ibm-cloud-pak-for-integration/images/image-20200615231154274.png)
+![image-20200615231154274](./images/image-20200615231154274.png)
 
 
 
@@ -406,7 +406,7 @@ You can see that we have App Connect Designer (the tooling for building integrat
 
 At any time, we can use the menu to navigate between these capabilities, as well as using the platform home screen. Use the `hamburger` menu at the top left like so:
 
-<img src="/Users/muralidhar/Murali/Work/Code Patterns/2CodeRepos/2020/build-an-integration-application-using-ibm-cloud-pak-for-integration/images/image-20200615231615577.png" alt="image-20200615231615577" style="zoom:47%;" align="left"/>
+<img src="./images/image-20200615231615577.png" alt="image-20200615231615577" style="zoom:47%;" align="left"/>
 
 
 
@@ -420,7 +420,7 @@ At any time, we can use the menu to navigate between these capabilities, as well
 
 Click on `ace-designer-demo` under `App Connect`. You’ll arrive at the App Connect Designer Dashboard here:
 
-![image-20200615232058774](/Users/muralidhar/Murali/Work/Code Patterns/2CodeRepos/2020/build-an-integration-application-using-ibm-cloud-pak-for-integration/images/image-20200615232058774.png)
+![image-20200615232058774](./images/image-20200615232058774.png)
 
 This is where we can create all of our API integration flows and also manage our connectivity to our services and endpoints. You can create many integration flows and manage them all here.
 
@@ -436,7 +436,7 @@ To connect to our endpoints, we’re going to need the credentials we created ea
 
 Let’s go to the connector catalog: click on the cogwheel/sprocket menu and click `Catalog`
 
-![image-20200615232502528](/Users/muralidhar/Murali/Work/Code Patterns/2CodeRepos/2020/build-an-integration-application-using-ibm-cloud-pak-for-integration/images/image-20200615232502528.png)
+![image-20200615232502528](./images/image-20200615232502528.png)
 
 The connector catalog appears with a list of the cloud pak connectors which are installed locally. There are many more connectors available although not all all of them run ‘locally’. Some of the connectors are currently available in the pak locally, all of them are available on the IBM cloud – you can use the ones that run on the IBM cloud directly from ICP4i designer as well – you just need to link ICP4i to your IBM cloud account, which we won’t be doing in this code pattern.
 
@@ -444,11 +444,11 @@ More connectors are being developed constantly – for a list, look here: https:
 
 You can choose whether you want to run the connectors locally or on the IBM cloud. For this task, we will run them locally:
 
-![image-20200616093457103](/Users/muralidhar/Murali/Work/Code Patterns/2CodeRepos/2020/build-an-integration-application-using-ibm-cloud-pak-for-integration/images/image-20200616093457103.png)
+![image-20200616093457103](./images/image-20200616093457103.png)
 
 Let’s set up our Watson AI endpoints – scroll down until you see the IBM Watson connectors:
 
-![image-20200616093522969](/Users/muralidhar/Murali/Work/Code Patterns/2CodeRepos/2020/build-an-integration-application-using-ibm-cloud-pak-for-integration/images/image-20200616093522969.png)
+![image-20200616093522969](./images/image-20200616093522969.png)
 
 
 
@@ -458,7 +458,7 @@ You’ll see that the connector expands and shows you the actions available for 
 
 ICP4i connectors are smart connectors and are metadata driven – you don’t need to know what functions and data are in the endpoint – the connectors will usually show them to you.
 
-<img src="/Users/muralidhar/Murali/Work/Code Patterns/2CodeRepos/2020/build-an-integration-application-using-ibm-cloud-pak-for-integration/images/image-20200616093644485.png" alt="image-20200616093644485" style="zoom:50%;" align="left"/>
+<img src="./images/image-20200616093644485.png" alt="image-20200616093644485" style="zoom:50%;" align="left"/>
 
 Click on `Connect`
 
@@ -470,7 +470,7 @@ You’ll now be asked for the API key that you kept safe from before: Enter it h
 
 Make sure you have the right one – the one for e.g. Tone Analyzer will not work for Visual Recognition.
 
-<img src="/Users/muralidhar/Murali/Work/Code Patterns/2CodeRepos/2020/build-an-integration-application-using-ibm-cloud-pak-for-integration/images/image-20200616094137910.png" alt="image-20200616094137910" style="zoom:50%;" align="left" />
+<img src="./images/image-20200616094137910.png" alt="image-20200616094137910" style="zoom:50%;" align="left" />
 
 (Hint: you can use the ‘eye’ button to show the API key to check it’s correct)
 
@@ -478,7 +478,7 @@ If you’ve ‘forgotten’ your API key, go back to the service you created in 
 
 If all goes well, (i.e. you’ve entered your key correctly), a connector account will be created for you – that’s it! You’ve added visual recognition capability to your integration
 
-<img src="/Users/muralidhar/Murali/Work/Code Patterns/2CodeRepos/2020/build-an-integration-application-using-ibm-cloud-pak-for-integration/images/image-20200616095925571.png" alt="image-20200616095925571" style="zoom:50%;" align="left" />
+<img src="./images/image-20200616095925571.png" alt="image-20200616095925571" style="zoom:50%;" align="left" />
 
 IMPORTANT: DON’T MOVE ON YET! You’ll see `Account 1` as the name of the account.
 
@@ -488,49 +488,49 @@ ICP4i lets you have multiple accounts for connecting to each type of system. For
 
 To rename your account, Click the three dots menu and click `rename account`
 
-<img src="/Users/muralidhar/Murali/Work/Code Patterns/2CodeRepos/2020/build-an-integration-application-using-ibm-cloud-pak-for-integration/images/image-20200616100321676.png" alt="image-20200616100321676" style="zoom:50%;" align="left"/>
+<img src="./images/image-20200616100321676.png" alt="image-20200616100321676" style="zoom:50%;" align="left"/>
 
 In the dialog box, name the account `App Connect Trial` (exactly as shown – capitals on the first letter of the words, spaces between the words) and click `Rename Account` as shown below,
 
-<img src="/Users/muralidhar/Murali/Work/Code Patterns/2CodeRepos/2020/build-an-integration-application-using-ibm-cloud-pak-for-integration/images/image-20200616100427281.png" alt="image-20200616100427281" style="zoom:50%;" align="left"/>
+<img src="./images/image-20200616100427281.png" alt="image-20200616100427281" style="zoom:50%;" align="left"/>
 
 You connector should now look like this:
 
-<img src="/Users/muralidhar/Murali/Work/Code Patterns/2CodeRepos/2020/build-an-integration-application-using-ibm-cloud-pak-for-integration/images/image-20200616100502762.png" alt="image-20200616100502762" style="zoom:50%;" align="left" />
+<img src="./images/image-20200616100502762.png" alt="image-20200616100502762" style="zoom:50%;" align="left" />
 
 OK, we have our Visual Recognition sorted – let’s do the next two Watson connectors:
 
 Click on `IBM Watson Tone Analyzer` and click `Connect`
 
-<img src="/Users/muralidhar/Murali/Work/Code Patterns/2CodeRepos/2020/build-an-integration-application-using-ibm-cloud-pak-for-integration/images/image-20200616100607006.png" alt="image-20200616100607006" style="zoom:50%;" align="left" />
+<img src="./images/image-20200616100607006.png" alt="image-20200616100607006" style="zoom:50%;" align="left" />
 
 Select the Local connector (if asked – you may not be) and click Continue
 
-<img src="/Users/muralidhar/Murali/Work/Code Patterns/2CodeRepos/2020/build-an-integration-application-using-ibm-cloud-pak-for-integration/images/image-20200616100752616.png" alt="image-20200616100752616" style="zoom:50%;" align="left"/>
+<img src="./images/image-20200616100752616.png" alt="image-20200616100752616" style="zoom:50%;" align="left"/>
 
 For this connector, we’ll need the URL and the API key that we got earlier: Enter them in the dialog below – (you won’t need the User name and Password). 
 
 Note: Your URL may be different to our screenshot – it depends in which cloud region your service is running. Click `Connect`
 
-<img src="/Users/muralidhar/Murali/Work/Code Patterns/2CodeRepos/2020/build-an-integration-application-using-ibm-cloud-pak-for-integration/images/image-20200616100952807.png" alt="image-20200616100952807" style="zoom:50%;" align="left" />
+<img src="./images/image-20200616100952807.png" alt="image-20200616100952807" style="zoom:50%;" align="left" />
 
 And we’re connected!
 
 IMPORTANT – FOR THE TASK, RENAME THE ACCOUNT to `App Connect Trial`. (use the three dots menu and click `Rename Account` )
 
-<img src="/Users/muralidhar/Murali/Work/Code Patterns/2CodeRepos/2020/build-an-integration-application-using-ibm-cloud-pak-for-integration/images/image-20200616101114113.png" alt="image-20200616101114113" style="zoom:50%;" align="left"/>
+<img src="./images/image-20200616101114113.png" alt="image-20200616101114113" style="zoom:50%;" align="left"/>
 
 Your connector should look like this:
 
-<img src="/Users/muralidhar/Murali/Work/Code Patterns/2CodeRepos/2020/build-an-integration-application-using-ibm-cloud-pak-for-integration/images/image-20200616101208091.png" alt="image-20200616101208091" style="zoom:50%;" align="left"/>
+<img src="./images/image-20200616101208091.png" alt="image-20200616101208091" style="zoom:50%;" align="left"/>
 
 Finally, let’s connect to the Watson Language Translator – it’s very similar:
 
-<img src="/Users/muralidhar/Murali/Work/Code Patterns/2CodeRepos/2020/build-an-integration-application-using-ibm-cloud-pak-for-integration/images/image-20200616101249851.png" alt="image-20200616101249851" style="zoom:50%;" align="left" />
+<img src="./images/image-20200616101249851.png" alt="image-20200616101249851" style="zoom:50%;" align="left" />
 
 Click `Connect` and select `Local` for the connector location (if asked) then enter your URL and API key (note your URL may be different from our screenshot depending on the region of your Watson services)
 
-<img src="/Users/muralidhar/Murali/Work/Code Patterns/2CodeRepos/2020/build-an-integration-application-using-ibm-cloud-pak-for-integration/images/image-20200616103057038.png" alt="image-20200616103057038" style="zoom:50%;" align="left"/>
+<img src="./images/image-20200616103057038.png" alt="image-20200616103057038" style="zoom:50%;" align="left"/>
 
 Click `Connect`
 
@@ -538,7 +538,7 @@ IMPORTANT – FOR THIS CODE PATTERN, RENAME THE ACCOUNT to `App Connect Trial`. 
 
 It should look like this:
 
-<img src="/Users/muralidhar/Murali/Work/Code Patterns/2CodeRepos/2020/build-an-integration-application-using-ibm-cloud-pak-for-integration/images/image-20200616103219649.png" alt="image-20200616103219649" style="zoom:50%;" align="left"/>
+<img src="./images/image-20200616103219649.png" alt="image-20200616103219649" style="zoom:50%;" align="left"/>
 
 Why is it important to rename the accounts? We’re going to import an integration flow to save you some typing and clicking. This flow is configured to look for connector accounts named `App Connect Trial`
 
@@ -554,11 +554,11 @@ Scroll down to the Salesforce connector. There may be multiple types of salesfor
 
 Click `Add a new account` if there are existing accounts, or just click `Connect` if this is the first one.
 
-<img src="/Users/muralidhar/Murali/Work/Code Patterns/2CodeRepos/2020/build-an-integration-application-using-ibm-cloud-pak-for-integration/images/image-20200616103600066.png" alt="image-20200616103600066" style="zoom:50%;" align="left" />
+<img src="./images/image-20200616103600066.png" alt="image-20200616103600066" style="zoom:50%;" align="left" />
 
 Select a Local connector location (if asked – you may not be asked) and click ‘Continue’
 
-<img src="/Users/muralidhar/Murali/Work/Code Patterns/2CodeRepos/2020/build-an-integration-application-using-ibm-cloud-pak-for-integration/images/image-20200616103813680.png" alt="image-20200616103813680" style="zoom:50%;" align="left"/>
+<img src="./images/image-20200616103813680.png" alt="image-20200616103813680" style="zoom:50%;" align="left"/>
 
 You’ll now be asked for the Salesforce credentials – how do you get these? Follow the steps below. 
 
@@ -566,7 +566,7 @@ Salesforce needs more than just your userid and password – it needs a client I
 
 The fields we need are shown below
 
-<img src="/Users/muralidhar/Murali/Work/Code Patterns/2CodeRepos/2020/build-an-integration-application-using-ibm-cloud-pak-for-integration/images/image-20200616103931845.png" alt="image-20200616103931845" style="zoom:50%;" align="left"/>
+<img src="./images/image-20200616103931845.png" alt="image-20200616103931845" style="zoom:50%;" align="left"/>
 
 You will require admin level access to your Salesforce account. 
 
@@ -574,11 +574,11 @@ You will require admin level access to your Salesforce account.
 
 Login to your Salesforce Developer account – you should see the screen like below:
 
-![image-20200616104029898](/Users/muralidhar/Murali/Work/Code Patterns/2CodeRepos/2020/build-an-integration-application-using-ibm-cloud-pak-for-integration/images/image-20200616104029898.png)
+![image-20200616104029898](./images/image-20200616104029898.png)
 
 To get your **loginURL**, click on your user profile. The URL text below your Account Name is your login URL – BUT WITHOUT THE LEADING HTTPS:// .
 
-![image-20200616104103155](/Users/muralidhar/Murali/Work/Code Patterns/2CodeRepos/2020/build-an-integration-application-using-ibm-cloud-pak-for-integration/images/image-20200616104103155.png)
+![image-20200616104103155](./images/image-20200616104103155.png)
 
  
 
@@ -586,23 +586,23 @@ Insert the **login URL** into the connector account form as shown below:
 
 IMPORTANT: You MUST enter the ‘https://’ part as well – it won’t work if you just copy/paste from the salesforce screen e.g. “um1.salesforce.com” will **not** work. “https://um1.salesforce.com” will!
 
-<img src="/Users/muralidhar/Murali/Work/Code Patterns/2CodeRepos/2020/build-an-integration-application-using-ibm-cloud-pak-for-integration/images/image-20200616104134388.png" alt="image-20200616104134388" style="zoom:50%;" align="left" />
+<img src="./images/image-20200616104134388.png" alt="image-20200616104134388" style="zoom:50%;" align="left" />
 
 Next we will need to **retrieve Security Token**. For this click on your user profile and select the Settings option in the profile panel.
 
-![image-20200616104211975](/Users/muralidhar/Murali/Work/Code Patterns/2CodeRepos/2020/build-an-integration-application-using-ibm-cloud-pak-for-integration/images/image-20200616104211975.png)
+![image-20200616104211975](./images/image-20200616104211975.png)
 
 Under Settings, find and click the “Reset Security Token” option
 
 (you may need to go to ‘Switch to lightning experience’ to see this)
 
-<img src="/Users/muralidhar/Murali/Work/Code Patterns/2CodeRepos/2020/build-an-integration-application-using-ibm-cloud-pak-for-integration/images/image-20200616111047905.png" alt="image-20200616111047905" style="zoom:50%;" align="left"/>(On the top right if you see it)
+<img src="./images/image-20200616111047905.png" alt="image-20200616111047905" style="zoom:50%;" align="left"/>(On the top right if you see it)
 
 
 
 
 
-![image-20200616111152457](/Users/muralidhar/Murali/Work/Code Patterns/2CodeRepos/2020/build-an-integration-application-using-ibm-cloud-pak-for-integration/images/image-20200616111152457.png)
+![image-20200616111152457](./images/image-20200616111152457.png)
 
 Click on Reset Security Token Button and it will send the **newly generated security token to your admin email address**. Use the token for your credentials. 
 
@@ -612,7 +612,7 @@ For example if you Salesforce password is 'myGreatPassword’ and your Salesforc
 
 `myGreatPassword2325jsdhew4312hs534dh` in the ‘password’ field.
 
-<img src="/Users/muralidhar/Murali/Work/Code Patterns/2CodeRepos/2020/build-an-integration-application-using-ibm-cloud-pak-for-integration/images/image-20200616111407934.png" alt="image-20200616111407934" style="zoom:50%;" align="left"/>
+<img src="./images/image-20200616111407934.png" alt="image-20200616111407934" style="zoom:50%;" align="left"/>
 
 Next we will retrieve the **Client ID and Secret**
 
@@ -621,15 +621,15 @@ Next we will retrieve the **Client ID and Secret**
 On the left-hand Finder panel go to:
 **PLATFORM TOOLS > Apps > App Manager**
 
-![image-20200616111549686](/Users/muralidhar/Murali/Work/Code Patterns/2CodeRepos/2020/build-an-integration-application-using-ibm-cloud-pak-for-integration/images/image-20200616111549686.png)
+![image-20200616111549686](./images/image-20200616111549686.png)
 
 You then want to **create a New Connected App** or use an existing one. Steps for creating a new app are as follows:
 
-![image-20200616111625258](/Users/muralidhar/Murali/Work/Code Patterns/2CodeRepos/2020/build-an-integration-application-using-ibm-cloud-pak-for-integration/images/image-20200616111625258.png)
+![image-20200616111625258](./images/image-20200616111625258.png)
 
 Provide a Connect App Name and an API Name is automatically generated for you. Provide a Contact Email (usually admin email address). Please make sure you Enable OAuth Settings and follow steps below to configure the OAuth setting.
 
-![image-20200616111648866](/Users/muralidhar/Murali/Work/Code Patterns/2CodeRepos/2020/build-an-integration-application-using-ibm-cloud-pak-for-integration/images/image-20200616111648866.png)
+![image-20200616111648866](./images/image-20200616111648866.png)
 
 Click on Enable OAuth Settings to get the configuration panel.
 
@@ -641,21 +641,21 @@ Connectors technically only require “data api” - you can optionally choose t
 
 And then click on Save.
 
-![image-20200616112325268](/Users/muralidhar/Murali/Work/Code Patterns/2CodeRepos/2020/build-an-integration-application-using-ibm-cloud-pak-for-integration/images/image-20200616112325268.png)
+![image-20200616112325268](./images/image-20200616112325268.png)
 
 **It may take several minutes for newly created Connected App to be registered**. Once registered go back to App Manager, select and view the created App
 
-![image-20200616112348717](/Users/muralidhar/Murali/Work/Code Patterns/2CodeRepos/2020/build-an-integration-application-using-ibm-cloud-pak-for-integration/images/image-20200616112348717.png)
+![image-20200616112348717](./images/image-20200616112348717.png)
 
 Use **Consumer Key and Secret as Client ID and Client Secret** respectively as needed in the connector account UI as follows:
 
-<img src="/Users/muralidhar/Murali/Work/Code Patterns/2CodeRepos/2020/build-an-integration-application-using-ibm-cloud-pak-for-integration/images/image-20200616112415309.png" alt="image-20200616112415309" style="zoom:50%;" align="left" />
+<img src="./images/image-20200616112415309.png" alt="image-20200616112415309" style="zoom:50%;" align="left" />
 
 Click Connect – you should see your account created!
 
 IMPORTANT – After all that, we need to rename our account! Don’t forget to use the three dots an rename our account to `App Connect Trial` as shown below.
 
-<img src="/Users/muralidhar/Murali/Work/Code Patterns/2CodeRepos/2020/build-an-integration-application-using-ibm-cloud-pak-for-integration/images/image-20200616112510301.png" alt="image-20200616112510301" style="zoom:50%;" align="left"/>
+<img src="./images/image-20200616112510301.png" alt="image-20200616112510301" style="zoom:50%;" align="left"/>
 
 Just as an aside, look at the sheer amount of data and functions available through the connector – you can expand them to see what the actions are. As the connectors are metadata driven, if you customize Salesforce with extra or customized fields, the connectors will pick them up automatically.
 
@@ -667,11 +667,11 @@ Great! We’re now all connected up! Let’s go and see our flow!
 
 Login to ICP4i dashboard and go to App Connect Designer. Click on the cogwheel (top right) and select `Dashboard` from the menu.
 
-![image-20200616112733785](/Users/muralidhar/Murali/Work/Code Patterns/2CodeRepos/2020/build-an-integration-application-using-ibm-cloud-pak-for-integration/images/image-20200616112733785.png)
+![image-20200616112733785](./images/image-20200616112733785.png)
 
 Click on `New` at the top right and select `Import flow`
 
-![image-20200616112804457](/Users/muralidhar/Murali/Work/Code Patterns/2CodeRepos/2020/build-an-integration-application-using-ibm-cloud-pak-for-integration/images/image-20200616112804457.png)
+![image-20200616112804457](./images/image-20200616112804457.png)
 
 We have a flow to use already built in github repo – we’re going to import it to save you typing and clicking!
 
@@ -685,13 +685,13 @@ https://raw.githubusercontent.com/IBM/build-an-integration-application-using-ibm
 
 (The %20 are how spaces are represented in a URL – they flow name has spaces in it, not %20)
 
-<img src="/Users/muralidhar/Murali/Work/Code Patterns/2CodeRepos/2020/build-an-integration-application-using-ibm-cloud-pak-for-integration/images/image-20200616123416889.png" alt="image-20200616123416889" style="zoom:30%;" align="left"/>
+<img src="./images/image-20200616123416889.png" alt="image-20200616123416889" style="zoom:30%;" align="left"/>
 
 (This is the address of the ‘Car Insurance Cognitive API Lab.yaml’ flow in our git repository)
 
 Click `Add file`. Then click `Import` 
 
-<img src="/Users/muralidhar/Murali/Work/Code Patterns/2CodeRepos/2020/build-an-integration-application-using-ibm-cloud-pak-for-integration/images/image-20200616122815425.png" alt="image-20200616122815425" style="zoom:30%;" align="left" />
+<img src="./images/image-20200616122815425.png" alt="image-20200616122815425" style="zoom:30%;" align="left" />
 
 
 
@@ -709,11 +709,11 @@ Now we’ve looked at the integration flow, let’s start it up.
 
 Click `Start API` on the three dot menu at the top right:
 
-![image-20200616180036046](/Users/muralidhar/Murali/Work/Code Patterns/2CodeRepos/2020/build-an-integration-application-using-ibm-cloud-pak-for-integration/images/image-20200616180036046.png)
+![image-20200616180036046](./images/image-20200616180036046.png)
 
 Your API should change to a status of ‘Running’ like below
 
-<img src="/Users/muralidhar/Murali/Work/Code Patterns/2CodeRepos/2020/build-an-integration-application-using-ibm-cloud-pak-for-integration/images/image-20200616180059747.png" alt="image-20200616180059747" style="zoom:50%;" align="left"/>
+<img src="./images/image-20200616180059747.png" alt="image-20200616180059747" style="zoom:50%;" align="left"/>
 
 Now our flow is running, we need to test it.
 
@@ -801,7 +801,7 @@ The test scripts are pre-built on github ready for you to use. The scripts are a
 
 To get the credentials for the designer, we go to the ‘Manage’ tab in designer.
 
-![image-20200617145700745](/Users/muralidhar/Murali/Work/Code Patterns/2CodeRepos/2020/build-an-integration-application-using-ibm-cloud-pak-for-integration/images/image-20200617145700745.png)
+![image-20200617145700745](./images/image-20200617145700745.png)
 
 This gives us the values for running the following commands in the terminal. ‘export’ is unix-speak for ‘set the environment variable’
 
@@ -821,7 +821,7 @@ To see the password, click the ‘Eye’ icon. To copy it to the clipboard, clic
 
 This test sends a picture with a chicken – there is no car in it so we should get an error
 
-<img src="/Users/muralidhar/Murali/Work/Code Patterns/2CodeRepos/2020/build-an-integration-application-using-ibm-cloud-pak-for-integration/images/image-20200617145855955.png" alt="image-20200617145855955" style="zoom:50%;" align="left" />
+<img src="./images/image-20200617145855955.png" alt="image-20200617145855955" style="zoom:50%;" align="left" />
 
 To run the test, type (including the first dot and slash) ./demotestchicken.sh
 
@@ -855,11 +855,11 @@ The expected response is something like:
 
 If you get `unexpected end of file`, double check that your API flow is started!
 
-<img src="/Users/muralidhar/Murali/Work/Code Patterns/2CodeRepos/2020/build-an-integration-application-using-ibm-cloud-pak-for-integration/images/image-20200617150623704.png" alt="image-20200617150623704" style="zoom:50%;" align="left"/>
+<img src="./images/image-20200617150623704.png" alt="image-20200617150623704" style="zoom:50%;" align="left"/>
 
 ### 8.2 Test2: “Subaru SUV Picture” – demotestsubaru.sh
 
-<img src="/Users/muralidhar/Murali/Work/Code Patterns/2CodeRepos/2020/build-an-integration-application-using-ibm-cloud-pak-for-integration/images/image-20200617150715075.png" alt="image-20200617150715075" style="zoom:50%;" align="left" />
+<img src="./images/image-20200617150715075.png" alt="image-20200617150715075" style="zoom:50%;" align="left" />
 
 The request is:
 
@@ -895,25 +895,25 @@ The expected response is:
 
 Note how this has created a case in Salesforce – you can go to Salesforce and see the case yourself
 
-<img src="/Users/muralidhar/Murali/Work/Code Patterns/2CodeRepos/2020/build-an-integration-application-using-ibm-cloud-pak-for-integration/images/image-20200617152121112.png" alt="image-20200617152121112"/>
+<img src="./images/image-20200617152121112.png" alt="image-20200617152121112"/>
 
 Click the 9 dots at the top left:
 
-<img src="/Users/muralidhar/Murali/Work/Code Patterns/2CodeRepos/2020/build-an-integration-application-using-ibm-cloud-pak-for-integration/images/image-20200617152151162.png" alt="image-20200617152151162" style="zoom:50%;" align="left" />
+<img src="./images/image-20200617152151162.png" alt="image-20200617152151162" style="zoom:50%;" align="left" />
 
 In ‘Search Apps and items, type ‘case’ then click ‘Cases’
 
 Don’t panic that it looks empty! Notice the filter `Recently Viewed` – click this to pull it down and select `All Open Cases`
 
-<img src="/Users/muralidhar/Murali/Work/Code Patterns/2CodeRepos/2020/build-an-integration-application-using-ibm-cloud-pak-for-integration/images/image-20200617152316937.png" alt="image-20200617152316937"/>
+<img src="./images/image-20200617152316937.png" alt="image-20200617152316937"/>
 
 Then you can see your case – with the Subaru photo in it!
 
-![image-20200617152342993](/Users/muralidhar/Murali/Work/Code Patterns/2CodeRepos/2020/build-an-integration-application-using-ibm-cloud-pak-for-integration/images/image-20200617152342993.png)
+![image-20200617152342993](./images/image-20200617152342993.png)
 
 Click on the ‘CarPicture.jpg’ to see the attached photo.
 
-<img src="/Users/muralidhar/Murali/Work/Code Patterns/2CodeRepos/2020/build-an-integration-application-using-ibm-cloud-pak-for-integration/images/image-20200617152403813.png" alt="image-20200617152403813" style="zoom:50%;" align="left"/>
+<img src="./images/image-20200617152403813.png" alt="image-20200617152403813" style="zoom:50%;" align="left"/>
 
 
 
@@ -929,11 +929,11 @@ When we deploy, it will create a 3 HA replica container pods running on OpenShif
 
 To export the .bar file, go into the designer dashboard and click the ‘…’ menu on the integration tile and click ‘Export…’
 
-<img src="/Users/muralidhar/Murali/Work/Code Patterns/2CodeRepos/2020/build-an-integration-application-using-ibm-cloud-pak-for-integration/images/image-20200617152533827.png" alt="image-20200617152533827" style="zoom:50%;" align="left"/>
+<img src="./images/image-20200617152533827.png" alt="image-20200617152533827" style="zoom:50%;" align="left"/>
 
 You’ll get a dialog box. Select ‘Export for integration server (BAR)’ and click ‘Export’
 
-<img src="/Users/muralidhar/Murali/Work/Code Patterns/2CodeRepos/2020/build-an-integration-application-using-ibm-cloud-pak-for-integration/images/image-20200617152600995.png" alt="image-20200617152600995" style="zoom:50%;" align="left" />
+<img src="./images/image-20200617152600995.png" alt="image-20200617152600995" style="zoom:50%;" align="left" />
 
 The browser may prompt you for a download location – otherwise it will place the ‘Car_Insurance_Cognitive_API_Lab_Short.bar’ file in the Downloads directory.
 
@@ -945,11 +945,11 @@ That’s it – we now have our executable flow – let’s see what we need to 
 
 From the menu, click ‘App Connect’ and then click ‘ace-1’:  This is the runtime, and not the tooling.
 
-<img src="/Users/muralidhar/Murali/Work/Code Patterns/2CodeRepos/2020/build-an-integration-application-using-ibm-cloud-pak-for-integration/images/image-20200617152812060.png" alt="image-20200617152812060" style="zoom:50%;" align="left"/>
+<img src="./images/image-20200617152812060.png" alt="image-20200617152812060" style="zoom:50%;" align="left"/>
 
 You’ll then be taken to the App Connect Dashboard – at the moment, there are no integrations here:
 
-<img src="/Users/muralidhar/Murali/Work/Code Patterns/2CodeRepos/2020/build-an-integration-application-using-ibm-cloud-pak-for-integration/images/image-20200617152944331.png" alt="image-20200617152944331" />
+<img src="./images/image-20200617152944331.png" alt="image-20200617152944331" />
 
 We need to create an integration server to run our integration. An integration server is a Kubernetes pod which has the containers needed to run our .bar file.
 
@@ -957,19 +957,19 @@ We need to create an integration server to run our integration. An integration s
 
 Click ‘Create Server’
 
-<img src="/Users/muralidhar/Murali/Work/Code Patterns/2CodeRepos/2020/build-an-integration-application-using-ibm-cloud-pak-for-integration/images/image-20200617153024018.png" alt="image-20200617153024018" style="zoom:50%;" align="left"/>
+<img src="./images/image-20200617153024018.png" alt="image-20200617153024018" style="zoom:50%;" align="left"/>
 
 In the dialog box, click ‘Add a BAR file’ (the + sign in the circle)
 
 Browse to the location of the ‘Car_Insurance_Cognitive_API_Lab.bar’ file that you exported from designer and select it with ‘Open’
 
-<img src="/Users/muralidhar/Murali/Work/Code Patterns/2CodeRepos/2020/build-an-integration-application-using-ibm-cloud-pak-for-integration/images/image-20200617153057914.png" alt="image-20200617153057914" style="zoom:50%;" align="left"/>
+<img src="./images/image-20200617153057914.png" alt="image-20200617153057914" style="zoom:50%;" align="left"/>
 
 – then hit continue on the dialog as below:
 
-<img src="/Users/muralidhar/Murali/Work/Code Patterns/2CodeRepos/2020/build-an-integration-application-using-ibm-cloud-pak-for-integration/images/image-20200617153128715.png" alt="image-20200617153128715" style="zoom:50%;" align="left" />
+<img src="./images/image-20200617153128715.png" alt="image-20200617153128715" style="zoom:50%;" align="left" />
 
-<img src="/Users/muralidhar/Murali/Work/Code Patterns/2CodeRepos/2020/build-an-integration-application-using-ibm-cloud-pak-for-integration/images/image-20200617153146619.png" alt="image-20200617153146619" style="zoom:50%;"  align="left" />
+<img src="./images/image-20200617153146619.png" alt="image-20200617153146619" style="zoom:50%;"  align="left" />
 
 We’re going to create an integration server to run our integration. Before we can do this, we need to download the configuration package.
 
@@ -977,7 +977,7 @@ The configuration package is a template where we can put all of our credentials 
 
  Now click ‘Next’ – you’ll be asked what kind of server you want to create: Choose “Designer” then click ‘Configuration’
 
-<img src="/Users/muralidhar/Murali/Work/Code Patterns/2CodeRepos/2020/build-an-integration-application-using-ibm-cloud-pak-for-integration/images/image-20200617153220335.png" alt="image-20200617153220335" style="zoom:67%;"  align="left"  />
+<img src="./images/image-20200617153220335.png" alt="image-20200617153220335" style="zoom:67%;"  align="left"  />
 
 You’ll see the following configuration options:
 
@@ -993,7 +993,7 @@ Select “App Connect Enterprise only” – the other options are if you want t
 
 We can use local connectors, or both cloud and local connectors: We’ll select ‘local connectors only’ as below:
 
-<img src="/Users/muralidhar/Murali/Work/Code Patterns/2CodeRepos/2020/build-an-integration-application-using-ibm-cloud-pak-for-integration/images/image-20200617153332096.png" alt="image-20200617153332096" style="zoom:67%;" align="left" />
+<img src="./images/image-20200617153332096.png" alt="image-20200617153332096" style="zoom:67%;" align="left" />
 
 ### 9.2.4 Docker images
 
@@ -1005,7 +1005,7 @@ The deployment is going to create some pods with App Connect container images �
 
 This is the Kubernetes secret that we will create to store the userids and passwords: We will give it a name now: we will call ours carrepaircreds01
 
-<img src="/Users/muralidhar/Murali/Work/Code Patterns/2CodeRepos/2020/build-an-integration-application-using-ibm-cloud-pak-for-integration/images/image-20200617153904138.png" alt="image-20200617153904138" style="zoom:50%;"  align="left" />
+<img src="./images/image-20200617153904138.png" alt="image-20200617153904138" style="zoom:50%;"  align="left" />
 
 A Kubernetes secret is a way of storing sensitive information in Kubernetes and Openshift. In this way, we keep our connection credentials separate from our integration logic.
 
@@ -1013,21 +1013,21 @@ After this, click ‘Create’:
 
 When you refresh, you should see this in your dashboard:
 
-![image-20200617153934266](/Users/muralidhar/Murali/Work/Code Patterns/2CodeRepos/2020/build-an-integration-application-using-ibm-cloud-pak-for-integration/images/image-20200617153934266.png)
+![image-20200617153934266](./images/image-20200617153934266.png)
 
 You may find that you initially see what looks like an error – this is the cloud pak spinning up 3 pods of the integration server – it won’t show a green tick until all the pods are running. Give it a few minutes or so and refresh your browser. You can leave it in this state for a bit and get on with the next part of the lab if you wish.
 
-<img src="/Users/muralidhar/Murali/Work/Code Patterns/2CodeRepos/2020/build-an-integration-application-using-ibm-cloud-pak-for-integration/images/image-20200617154008866.png" alt="image-20200617154008866" style="zoom:50%;"  align="left" />
+<img src="./images/image-20200617154008866.png" alt="image-20200617154008866" style="zoom:50%;"  align="left" />
 
 At this point, the integration is running on the cloud pak however, it can’t actually connect to anything – it doesn’t have any credentials to connect to Salesforce or Watson.
 
 Click the tile and you’ll see the following:
 
-<img src="/Users/muralidhar/Murali/Work/Code Patterns/2CodeRepos/2020/build-an-integration-application-using-ibm-cloud-pak-for-integration/images/image-20200617154032834.png" alt="image-20200617154032834" style="zoom:50%;"  align="left" />
+<img src="./images/image-20200617154032834.png" alt="image-20200617154032834" style="zoom:50%;"  align="left" />
 
 Click again, and you’ll drill down further and see the following:
 
-![image-20200617154050313](/Users/muralidhar/Murali/Work/Code Patterns/2CodeRepos/2020/build-an-integration-application-using-ibm-cloud-pak-for-integration/images/image-20200617154050313.png)
+![image-20200617154050313](./images/image-20200617154050313.png)
 
 You can see the REST operation, the base URL and you can even download the OpenAPI (also called swagger) document.
 
@@ -1051,17 +1051,17 @@ ICP4i gives you a pre-built configuration package to help you create your secret
 
 Earlier on, we downloaded this package from this dialog box:
 
-<img src="/Users/muralidhar/Murali/Work/Code Patterns/2CodeRepos/2020/build-an-integration-application-using-ibm-cloud-pak-for-integration/images/image-20200617154242471.png" alt="image-20200617154242471" style="zoom:50%;"  align="left" />
+<img src="./images/image-20200617154242471.png" alt="image-20200617154242471" style="zoom:50%;"  align="left" />
 
 Unzip the downloaded file and you’ll see the files within:
 
-<img src="/Users/muralidhar/Murali/Work/Code Patterns/2CodeRepos/2020/build-an-integration-application-using-ibm-cloud-pak-for-integration/images/image-20200617154410725.png" alt="image-20200617154410725" style="zoom:67%;"  align="left" />
+<img src="./images/image-20200617154410725.png" alt="image-20200617154410725" style="zoom:67%;"  align="left" />
 
 The one we want to focus on is called credentials.yaml - we need to put our credentials in there.
 
 Click on ‘Extract’ to extract the files from the archive. We’re going to leave it in ‘Downloads’ for this example, but you can place it where you wish – when the ‘where to extract’ dialog box appears, click ‘Extract’ again.
 
-<img src="/Users/muralidhar/Murali/Work/Code Patterns/2CodeRepos/2020/build-an-integration-application-using-ibm-cloud-pak-for-integration/images/image-20200617154435958.png" alt="image-20200617154435958" style="zoom:50%;"  align="left" />
+<img src="./images/image-20200617154435958.png" alt="image-20200617154435958" style="zoom:50%;"  align="left" />
 
 At this point, all the files will be in the Downloads directory.
 
@@ -1071,11 +1071,11 @@ There is a template/sample credentials file available at https://github.com/garr
 
 You can see it here (ignore the ServiceNow details – we will use them later)
 
-<img src="/Users/muralidhar/Murali/Work/Code Patterns/2CodeRepos/2020/build-an-integration-application-using-ibm-cloud-pak-for-integration/images/image-20200617154546514.png" alt="image-20200617154546514" style="zoom: 67%;"  align="left" />
+<img src="./images/image-20200617154546514.png" alt="image-20200617154546514" style="zoom: 67%;"  align="left" />
 
 You can either download this file into the downloads directory, or just copy and paste the contents into the editor like so:
 
-<img src="/Users/muralidhar/Murali/Work/Code Patterns/2CodeRepos/2020/build-an-integration-application-using-ibm-cloud-pak-for-integration/images/image-20200617154615939.png" alt="image-20200617154615939" style="zoom:67%;"  align="left" />
+<img src="./images/image-20200617154615939.png" alt="image-20200617154615939" style="zoom:67%;"  align="left" />
 
 We’re now going to overwrite the credentials with those that we created earlier.
 
@@ -1089,7 +1089,7 @@ Contents shown below:
 
 Remember that this is a .yaml file so spaces/tabs etc are crucial – don’t change them from the template:
 
-<img src="/Users/muralidhar/Murali/Work/Code Patterns/2CodeRepos/2020/build-an-integration-application-using-ibm-cloud-pak-for-integration/images/image-20200617154639425.png" alt="image-20200617154639425" style="zoom:67%;"  align="left" />
+<img src="./images/image-20200617154639425.png" alt="image-20200617154639425" style="zoom:67%;"  align="left" />
 
 Click ‘Save’ on the editor and close it.
 
@@ -1099,29 +1099,29 @@ To run the script, we need to set up our environment to that it points to our IC
 
 In the FireFox browser, go back to the Cloud Pak Platform Navigator and select ‘Cloud Pak Foundation” from the hamburger menu.
 
-<img src="/Users/muralidhar/Murali/Work/Code Patterns/2CodeRepos/2020/build-an-integration-application-using-ibm-cloud-pak-for-integration/images/image-20200617154657968.png" alt="image-20200617154657968"  align="left"  />
+<img src="./images/image-20200617154657968.png" alt="image-20200617154657968"  align="left"  />
 
 Now click on the ‘face’ icon on the top right and click on the ‘configure client’ cogwheel in the menu
 
-![image-20200617154718356](/Users/muralidhar/Murali/Work/Code Patterns/2CodeRepos/2020/build-an-integration-application-using-ibm-cloud-pak-for-integration/images/image-20200617154718356.png)
+![image-20200617154718356](./images/image-20200617154718356.png)
 
 You’ll get a series of commands to run on the desktop terminal:
 
 Click the ‘Copy to clipboard’ icon (overlapping squares)
 
-<img src="/Users/muralidhar/Murali/Work/Code Patterns/2CodeRepos/2020/build-an-integration-application-using-ibm-cloud-pak-for-integration/images/image-20200617154802393.png" alt="image-20200617154802393" style="zoom:67%;"  align="left" />
+<img src="./images/image-20200617154802393.png" alt="image-20200617154802393" style="zoom:67%;"  align="left" />
 
 We now have the commands we need – we’re now going to paste them into the terminal.
 
 Open the terminal using the Applications menu and clicking ‘Terminal’
 
-![image-20200617154837930](/Users/muralidhar/Murali/Work/Code Patterns/2CodeRepos/2020/build-an-integration-application-using-ibm-cloud-pak-for-integration/images/image-20200617154837930.png)
+![image-20200617154837930](./images/image-20200617154837930.png)
 
 Now paste the commands from the clipboard to run them: Edit/Paste (or right-click/paste)
 
-![image-20200617154853991](/Users/muralidhar/Murali/Work/Code Patterns/2CodeRepos/2020/build-an-integration-application-using-ibm-cloud-pak-for-integration/images/image-20200617154853991.png)
+![image-20200617154853991](./images/image-20200617154853991.png)
 
-![image-20200617154903836](/Users/muralidhar/Murali/Work/Code Patterns/2CodeRepos/2020/build-an-integration-application-using-ibm-cloud-pak-for-integration/images/image-20200617154903836.png)
+![image-20200617154903836](./images/image-20200617154903836.png)
 
 The commands will run and connect you to ICP4i!
 
@@ -1131,7 +1131,7 @@ We’re going to put our secret into the ‘ace’ project – this is where app
 
 Type ‘oc project ace’ to use the ‘ace’ project (an OpenShift project is like a Kubernetes namespace)
 
-![image-20200617154927407](/Users/muralidhar/Murali/Work/Code Patterns/2CodeRepos/2020/build-an-integration-application-using-ibm-cloud-pak-for-integration/images/image-20200617154927407.png)
+![image-20200617154927407](./images/image-20200617154927407.png)
 
 We’re currently in the ibmuser home directory (check by typing pwd if you wish – pwd=Print Working Directory).
 
@@ -1139,15 +1139,15 @@ Type ‘cd Downloads’ to get to the Downloads directory – this is where we h
 
 Type ‘./generateSecrets.sh carrepaircreds01’ (yes, start with dot and slash – that tells linux to run the command in the current directory)
 
-![image-20200617154944827](/Users/muralidhar/Murali/Work/Code Patterns/2CodeRepos/2020/build-an-integration-application-using-ibm-cloud-pak-for-integration/images/image-20200617154944827.png)
+![image-20200617154944827](./images/image-20200617154944827.png)
 
 This will create the Kubernetes secret called ‘carrepaircreds01’ into the cloud pak.
 
-![image-20200617155000265](/Users/muralidhar/Murali/Work/Code Patterns/2CodeRepos/2020/build-an-integration-application-using-ibm-cloud-pak-for-integration/images/image-20200617155000265.png)
+![image-20200617155000265](./images/image-20200617155000265.png)
 
 If we go back to the App Connect Dashboard, we can see that our integration should be running – and be running with 3 highly available replicas.
 
-<img src="/Users/muralidhar/Murali/Work/Code Patterns/2CodeRepos/2020/build-an-integration-application-using-ibm-cloud-pak-for-integration/images/image-20200617155015044.png" alt="image-20200617155015044" style="zoom:67%;"  align="left" />
+<img src="./images/image-20200617155015044.png" alt="image-20200617155015044" style="zoom:67%;"  align="left" />
 
 This means we now have our integration running on our cloud pak server.
 
@@ -1159,11 +1159,11 @@ We’ll use the same scrips we used to test designer – we’ll just change the
 
 Click on our carrepair01 integration tile on the dashboard – you’ll see this:
 
-<img src="/Users/muralidhar/Murali/Work/Code Patterns/2CodeRepos/2020/build-an-integration-application-using-ibm-cloud-pak-for-integration/images/image-20200617155054950.png" alt="image-20200617155054950" style="zoom:67%;"  align="left" />
+<img src="./images/image-20200617155054950.png" alt="image-20200617155054950" style="zoom:67%;"  align="left" />
 
 Click on this and you’ll see:
 
-<img src="/Users/muralidhar/Murali/Work/Code Patterns/2CodeRepos/2020/build-an-integration-application-using-ibm-cloud-pak-for-integration/images/image-20200617155111540.png" alt="image-20200617155111540" style="zoom:67%;"  align="left" />
+<img src="./images/image-20200617155111540.png" alt="image-20200617155111540" style="zoom:67%;"  align="left" />
 
 The ‘REST API Base URL’ gives us the base URL variable we need.
 
