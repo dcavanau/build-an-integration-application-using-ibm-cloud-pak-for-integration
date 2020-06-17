@@ -22,7 +22,7 @@ Business Scenario:
   - We want to minimize manual processes and have the repair request automatically create a repair case in our CRM system (Salesforce). If a customer wants to book a repair at 3am on a Sunday, they can – it’s their choice.
   - We are wanting to grow our business fast with this new model and expect the use of APIs to really increase the number of requests we get. We need our solution to be scalable and highly available.
 
-  ![image-20200608183714387](./images/image-20200608183714387.png)
+  <img src="./images/image-20200608183714387.png" alt="image-20200608183714387" width="80%" />
 
 
 
@@ -298,11 +298,11 @@ Check the `AI` filter checkbox on the left to filter for Watson services. (You c
 
 Scroll down and click on the `Visual Recognition` tile.
 
-<img src="./images/image-20200609213928692.png" alt="image-20200609213928692" width="50%" />
+<img src="./images/image-20200609213928692.png" alt="image-20200609213928692" width="30%" />
 
 Inside, you’ll be able create a lite plan (free) instance as shown in the screenshot below (ignore the warning on our screenshot about only being able to have one lite plan per account– that’s because we already had one lite instance set up in the lab authors’ IBM Cloud Account)
 
-<img src="./images/image-20200609214115913.png" alt="image-20200609214115913" width="50%" />
+<img src="./images/image-20200609214115913.png" alt="image-20200609214115913" width="60%" />
 
 Select the free `lite` plan and provision the service.
 
@@ -310,7 +310,7 @@ You can change the service name to something more memorable if you wish.
 
 Once you create the service, you’ll be able to see it in your cloud dashboard (to get to the cloud Dashboard, click the `hamburger` menu at the top left of the screen and select `Dashboard`
 
-<img src="./images/image-20200609222149224.png" alt="image-20200609222149224" width="80%" />
+<img src="./images/image-20200609222149224.png" alt="image-20200609222149224" width="30%" />
 
  Look under `Services` and you’ll find your newly created service (you can see a number of services in our screenshot below – we’ve renamed ours to add `Dallas` on the end but yours will have a similar name)     
 
@@ -326,7 +326,7 @@ You’ll next need to do similar for `Language Translator`. It also has `Lite` p
 
 Make sure you obtain the URL and API keys (in `credentials`) for all of these Watson services – we’ll be needing them later. You obtain the URL and API keys for both the services in the same way.
 
-<img src="./images/image-20200609223016557.png" alt="image-20200609223016557" width="67%" />
+<img src="./images/image-20200609223016557.png" alt="image-20200609223016557" width="40%" />
 
 
 
@@ -381,11 +381,11 @@ Refer to [Provisioning.md](./Provisioning.md) for CP4I set up instructions.
 
 ![image-20200615225422040](./images/image-20200615225422040.png)
 
+
+
 If you see any certificate issue, you can select to proceed to unsafe website/link. You’ll be presented with a login screen to CP4I. Use `admin` as username and the password that you set while following `Provisioning` instructions. Click on `Login`. 
 
-- Click on `Skip Welcome` , if a welcome page is displayed. 
-
-
+Click on `Skip Welcome` , if a welcome page is displayed. 
 
 Welcome to ICP4i! You’re now at the home screen showing all the capabilities of the pak, brought together in one place.
 
@@ -449,7 +449,7 @@ You can choose whether you want to run the connectors locally or on the IBM clou
 
 Let’s set up our Watson AI endpoints – scroll down until you see the IBM Watson connectors:
 
-![image-20200616093522969](./images/image-20200616093522969.png)
+<img src="./images/image-20200616093522969.png" alt="image-20200616093522969" width="80%" />
 
 
 
@@ -597,7 +597,7 @@ Under Settings, find and click the “Reset Security Token” option
 
 (you may need to go to ‘Switch to lightning experience’ to see this)
 
-<img src="./images/image-20200616111047905.png" alt="image-20200616111047905" width="50%" />(On the top right if you see it)
+<img src="./images/image-20200616111047905.png" alt="image-20200616111047905" width="30%" />(On the top right if you see it)
 
 
 
@@ -686,13 +686,13 @@ https://raw.githubusercontent.com/IBM/build-an-integration-application-using-ibm
 
 (The %20 are how spaces are represented in a URL – they flow name has spaces in it, not %20)
 
-<img src="./images/image-20200616123416889.png" alt="image-20200616123416889" width="30%" />
+<img src="./images/image-20200616123416889.png" alt="image-20200616123416889" width="50%" />
 
 (This is the address of the ‘Car Insurance Cognitive API Lab.yaml’ flow in our git repository)
 
 Click `Add file`. Then click `Import` 
 
-<img src="./images/image-20200616122815425.png" alt="image-20200616122815425" width="30%" />
+<img src="./images/image-20200616122815425.png" alt="image-20200616122815425" width="50%" />
 
 
 
@@ -714,7 +714,7 @@ Click `Start API` on the three dot menu at the top right:
 
 Your API should change to a status of ‘Running’ like below
 
-<img src="./images/image-20200616180059747.png" alt="image-20200616180059747" width="50%" />
+<img src="./images/image-20200616180059747.png" alt="image-20200616180059747" width="20%" />
 
 Now our flow is running, we need to test it.
 
@@ -856,7 +856,7 @@ The expected response is something like:
 
 If you get `unexpected end of file`, double check that your API flow is started!
 
-<img src="./images/image-20200617150623704.png" alt="image-20200617150623704" width="50%" />
+<img src="./images/image-20200617150623704.png" alt="image-20200617150623704" width="20%" />
 
 ### 8.2 Test2: “Subaru SUV Picture” – demotestsubaru.sh
 
@@ -934,7 +934,7 @@ To export the .bar file, go into the designer dashboard and click the ‘…’ 
 
 You’ll get a dialog box. Select ‘Export for integration server (BAR)’ and click ‘Export’
 
-<img src="./images/image-20200617152600995.png" alt="image-20200617152600995" width="50%" />
+<img src="./images/image-20200617152600995.png" alt="image-20200617152600995" width="70%" />
 
 The browser may prompt you for a download location – otherwise it will place the ‘Car_Insurance_Cognitive_API_Lab_Short.bar’ file in the Downloads directory.
 
@@ -978,7 +978,7 @@ The configuration package is a template where we can put all of our credentials 
 
  Now click ‘Next’ – you’ll be asked what kind of server you want to create: Choose “Designer” then click ‘Configuration’
 
-<img src="./images/image-20200617153220335.png" alt="image-20200617153220335" width="67%" />
+<img src="./images/image-20200617153220335.png" alt="image-20200617153220335" width="50%" />
 
 You’ll see the following configuration options:
 
@@ -994,7 +994,7 @@ Select “App Connect Enterprise only” – the other options are if you want t
 
 We can use local connectors, or both cloud and local connectors: We’ll select ‘local connectors only’ as below:
 
-<img src="./images/image-20200617153332096.png" alt="image-20200617153332096" width="67%" />
+<img src="./images/image-20200617153332096.png" alt="image-20200617153332096" width="50%" />
 
 ### 9.2.4 Docker images
 
@@ -1018,13 +1018,13 @@ When you refresh, you should see this in your dashboard:
 
 You may find that you initially see what looks like an error – this is the cloud pak spinning up 3 pods of the integration server – it won’t show a green tick until all the pods are running. Give it a few minutes or so and refresh your browser. You can leave it in this state for a bit and get on with the next part of the lab if you wish.
 
-<img src="./images/image-20200617154008866.png" alt="image-20200617154008866" width="50%" />
+<img src="./images/image-20200617154008866.png" alt="image-20200617154008866" width="30%" />
 
 At this point, the integration is running on the cloud pak however, it can’t actually connect to anything – it doesn’t have any credentials to connect to Salesforce or Watson.
 
 Click the tile and you’ll see the following:
 
-<img src="./images/image-20200617154032834.png" alt="image-20200617154032834" width="50%" />
+<img src="./images/image-20200617154032834.png" alt="image-20200617154032834" width="30%" />
 
 Click again, and you’ll drill down further and see the following:
 
@@ -1056,7 +1056,7 @@ Earlier on, we downloaded this package from this dialog box:
 
 Unzip the downloaded file and you’ll see the files within:
 
-<img src="./images/image-20200617154410725.png" alt="image-20200617154410725" width="67%" />
+<img src="./images/image-20200617154410725.png" alt="image-20200617154410725" width="50%" />
 
 The one we want to focus on is called credentials.yaml - we need to put our credentials in there.
 
@@ -1116,13 +1116,13 @@ We now have the commands we need – we’re now going to paste them into the te
 
 Open the terminal using the Applications menu and clicking ‘Terminal’
 
-![image-20200617154837930](./images/image-20200617154837930.png)
+<img src="./images/image-20200617154837930.png" alt="image-20200617154837930" width="80%" />
 
 Now paste the commands from the clipboard to run them: Edit/Paste (or right-click/paste)
 
-![image-20200617154853991](./images/image-20200617154853991.png)
+<img src="./images/image-20200617154853991.png" alt="image-20200617154853991" width="80%" />
 
-![image-20200617154903836](./images/image-20200617154903836.png)
+<img src="./images/image-20200617154903836.png" alt="image-20200617154903836" width="80%" />
 
 The commands will run and connect you to ICP4i!
 
@@ -1132,7 +1132,7 @@ We’re going to put our secret into the ‘ace’ project – this is where app
 
 Type ‘oc project ace’ to use the ‘ace’ project (an OpenShift project is like a Kubernetes namespace)
 
-![image-20200617154927407](./images/image-20200617154927407.png)
+<img src="./images/image-20200617154927407.png" alt="image-20200617154927407" width="80%" />
 
 We’re currently in the ibmuser home directory (check by typing pwd if you wish – pwd=Print Working Directory).
 
@@ -1140,15 +1140,15 @@ Type ‘cd Downloads’ to get to the Downloads directory – this is where we h
 
 Type ‘./generateSecrets.sh carrepaircreds01’ (yes, start with dot and slash – that tells linux to run the command in the current directory)
 
-![image-20200617154944827](./images/image-20200617154944827.png)
+<img src="./images/image-20200617154944827.png" alt="image-20200617154944827" width="80%" />
 
 This will create the Kubernetes secret called ‘carrepaircreds01’ into the cloud pak.
 
-![image-20200617155000265](./images/image-20200617155000265.png)
+<img src="./images/image-20200617155000265.png" alt="image-20200617155000265" width="80%" />
 
 If we go back to the App Connect Dashboard, we can see that our integration should be running – and be running with 3 highly available replicas.
 
-<img src="./images/image-20200617155015044.png" alt="image-20200617155015044" width="67%" />
+<img src="./images/image-20200617155015044.png" alt="image-20200617155015044" width="30%" />
 
 This means we now have our integration running on our cloud pak server.
 
@@ -1160,7 +1160,7 @@ We’ll use the same scrips we used to test designer – we’ll just change the
 
 Click on our carrepair01 integration tile on the dashboard – you’ll see this:
 
-<img src="./images/image-20200617155054950.png" alt="image-20200617155054950" width="67%" />
+<img src="./images/image-20200617155054950.png" alt="image-20200617155054950" width="30%" />
 
 Click on this and you’ll see:
 
