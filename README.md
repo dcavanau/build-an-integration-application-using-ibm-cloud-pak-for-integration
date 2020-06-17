@@ -16,12 +16,19 @@ Business Scenario:
 - We are a Car Repair company: We take in vehicles with problems and repair them – seems simple but..
 
   - We want to gain business advantage by allowing multiple car leasing companies to use us to repair their cars – these companies insist that we expose APIs for them to call to do business with them.
+  
   - We want to allow their customers to book their cars in for repair and get an estimate for price and number of days in real time – in seconds. Later we will build more APIs to allow customers to query the status of their repairs, or make updates or add comments to their repair cases.
+  
   - We want to allow them to send photos of their cars so we can check for type, damage etc.
-  - We want to check for errors and issues up-front as quickly as possible to feed back to the customer in real time. Photo not valid? No car in the photo? We’ll tell you instantly so you can re-submit.
+  
+- We want to check for errors and issues up-front as quickly as possible to feed back to the customer in real time. Photo not valid? No car in the photo? We’ll tell you instantly so you can re-submit.
+  
   - We want to minimize manual processes and have the repair request automatically create a repair case in our CRM system (Salesforce). If a customer wants to book a repair at 3am on a Sunday, they can – it’s their choice.
+  
   - We are wanting to grow our business fast with this new model and expect the use of APIs to really increase the number of requests we get. We need our solution to be scalable and highly available.
-
+  
+    
+  
   <img src="./images/image-20200608183714387.png" alt="image-20200608183714387" width="80%" />
 
 
@@ -271,7 +278,7 @@ Once you have an account, all of the Watson services have ‘lite’ plans which
 
 The IBM Cloud can be accessed at https://cloud.ibm.com
 
-<img src="./images/image-20200609174730528.png" alt="image-20200609174730528" width="50%" />
+<img src="./images/image-20200609174730528.png" alt="image-20200609174730528" />
 
 If you don’t have an IBM ID (You can use the one you used to register for Think!) then click ‘Create an account’ – all you need is an email, you don’t need a credit card.
 
@@ -279,7 +286,7 @@ When you have an IBM ID, sign in at https://cloud.ibm.com (Depending on your com
 
 Once you’re in, you’ll be presented with the cloud dashboard showing which services you have provisioned:
 
-<img src="./images/image-20200609204306444.png" alt="image-20200609204306444" width=" 50%" />
+<img src="./images/image-20200609204306444.png" alt="image-20200609204306444" />
 
 
 (You may not see this many services, clusters etc – the lab authors have many things in their IBM Cloud accounts.)
@@ -294,7 +301,7 @@ You’ll see a list of services (if not, click on `services`).
 
 Check the `AI` filter checkbox on the left to filter for Watson services. (You can also search for them by name)
 
-<img src="./images/image-20200609204553080.png" alt="image-20200609204553080" width=" 50%" />
+<img src="./images/image-20200609204553080.png" alt="image-20200609204553080" />
 
 Scroll down and click on the `Visual Recognition` tile.
 
@@ -314,11 +321,11 @@ Once you create the service, you’ll be able to see it in your cloud dashboard 
 
  Look under `Services` and you’ll find your newly created service (you can see a number of services in our screenshot below – we’ve renamed ours to add `Dallas` on the end but yours will have a similar name)     
 
-<img src="./images/image-20200609222405756.png" alt="image-20200609222405756" width="67%" /> 
+<img src="./images/image-20200609222405756.png" alt="image-20200609222405756" /> 
 
 Click on your new service and you’ll see the `Manage` tab:
 
-<img src="./images/image-20200609222439728.png" alt="image-20200609222439728" width="67%" />
+<img src="./images/image-20200609222439728.png" alt="image-20200609222439728" />
 
 The API key and URL are what we are going to need to integrate with the service. You can click `Show credentials` and copy/paste them somewhere for later use in this lab or you can click `Download` and they will be downloaded as a text file for you.
 
@@ -326,7 +333,7 @@ You’ll next need to do similar for `Language Translator`. It also has `Lite` p
 
 Make sure you obtain the URL and API keys (in `credentials`) for all of these Watson services – we’ll be needing them later. You obtain the URL and API keys for both the services in the same way.
 
-<img src="./images/image-20200609223016557.png" alt="image-20200609223016557" width="40%" />
+<img src="./images/image-20200609223016557.png" alt="image-20200609223016557" width="30%" />
 
 
 
@@ -338,7 +345,7 @@ We will need a **developer** account to use for testing – if you already have 
 
 Go to https://developer.salesforce.com and click on `sign up`
 
-<img src="./images/image-20200609223448761.png" alt="image-20200609223448761"   width="80%" />
+<img src="./images/image-20200609223448761.png" alt="image-20200609223448761" />
 
 Not that this is NOT the same as `salesforce.com -> try for free`. **You will need a developer account to use this lab**. You can use a webmail email address to sign up if you wish, rather than your company one.
 
@@ -597,7 +604,7 @@ Under Settings, find and click the “Reset Security Token” option
 
 (you may need to go to ‘Switch to lightning experience’ to see this)
 
-<img src="./images/image-20200616111047905.png" alt="image-20200616111047905" width="30%" />(On the top right if you see it)
+<img src="./images/image-20200616111047905.png" alt="image-20200616111047905" width="20%" />(On the top right if you see it)
 
 
 
@@ -1072,11 +1079,11 @@ There is a template/sample credentials file available at https://github.com/garr
 
 You can see it here (ignore the ServiceNow details – we will use them later)
 
-<img src="./images/image-20200617154546514.png" alt="image-20200617154546514" width=" 67%" />
+<img src="./images/image-20200617154546514.png" alt="image-20200617154546514" />
 
 You can either download this file into the downloads directory, or just copy and paste the contents into the editor like so:
 
-<img src="./images/image-20200617154615939.png" alt="image-20200617154615939" width="67%" />
+<img src="./images/image-20200617154615939.png" alt="image-20200617154615939" />
 
 We’re now going to overwrite the credentials with those that we created earlier.
 
@@ -1090,7 +1097,7 @@ Contents shown below:
 
 Remember that this is a .yaml file so spaces/tabs etc are crucial – don’t change them from the template:
 
-<img src="./images/image-20200617154639425.png" alt="image-20200617154639425" width="67%" />
+<img src="./images/image-20200617154639425.png" alt="image-20200617154639425" />
 
 Click ‘Save’ on the editor and close it.
 
@@ -1116,13 +1123,13 @@ We now have the commands we need – we’re now going to paste them into the te
 
 Open the terminal using the Applications menu and clicking ‘Terminal’
 
-<img src="./images/image-20200617154837930.png" alt="image-20200617154837930" width="80%" />
+<img src="./images/image-20200617154837930.png" alt="image-20200617154837930" />
 
 Now paste the commands from the clipboard to run them: Edit/Paste (or right-click/paste)
 
-<img src="./images/image-20200617154853991.png" alt="image-20200617154853991" width="80%" />
+<img src="./images/image-20200617154853991.png" alt="image-20200617154853991" />
 
-<img src="./images/image-20200617154903836.png" alt="image-20200617154903836" width="80%" />
+<img src="./images/image-20200617154903836.png" alt="image-20200617154903836" />
 
 The commands will run and connect you to ICP4i!
 
@@ -1132,7 +1139,7 @@ We’re going to put our secret into the ‘ace’ project – this is where app
 
 Type ‘oc project ace’ to use the ‘ace’ project (an OpenShift project is like a Kubernetes namespace)
 
-<img src="./images/image-20200617154927407.png" alt="image-20200617154927407" width="80%" />
+<img src="./images/image-20200617154927407.png" alt="image-20200617154927407" />
 
 We’re currently in the ibmuser home directory (check by typing pwd if you wish – pwd=Print Working Directory).
 
@@ -1140,11 +1147,11 @@ Type ‘cd Downloads’ to get to the Downloads directory – this is where we h
 
 Type ‘./generateSecrets.sh carrepaircreds01’ (yes, start with dot and slash – that tells linux to run the command in the current directory)
 
-<img src="./images/image-20200617154944827.png" alt="image-20200617154944827" width="80%" />
+<img src="./images/image-20200617154944827.png" alt="image-20200617154944827" />
 
 This will create the Kubernetes secret called ‘carrepaircreds01’ into the cloud pak.
 
-<img src="./images/image-20200617155000265.png" alt="image-20200617155000265" width="80%" />
+<img src="./images/image-20200617155000265.png" alt="image-20200617155000265" />
 
 If we go back to the App Connect Dashboard, we can see that our integration should be running – and be running with 3 highly available replicas.
 
