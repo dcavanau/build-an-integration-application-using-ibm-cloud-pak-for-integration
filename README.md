@@ -1,9 +1,12 @@
+# Work-in-progress
+
+
+
 # Build a Cognitive Car Claim Processing application with CP4I Integration capabilities
-### Work-in-progress
 
 Every enterprise in today's markets must offer robust digital products and services, often requiring integration of complex capabilities and systems to deliver one coherent whole. [IBM Cloud Pak for Integration](https://cloud.ibm.com/docs/cloud-pak-integration?topic=cloud-pak-integration-getting-started) offers a simplified solution to this integration challenge, allowing the enterprise to modernize its processes while positioning itself for future innovation. Once installed, IBM Cloud Pak for Integration eases monitoring, maintenance and upgrades, helping the enterprise stay ahead of the innovation curve.
 
-In this Code Pattern will Integration Designer to create an API which takes a car repair claim request, complete with a photograph of the car, and integrates with a SaaS CRM system and IBM’s Watson AI to create a car repair case with all the correct details loaded into the SaaS system. and data routed to the correct location based on the image contents; all in a few seconds before returning a response to the customer.
+In this code pattern will use Integration Designer to create an API which takes a car repair claim request, complete with a photograph of the car, and integrates with a SaaS CRM system and IBM’s Watson AI to create a car repair case with all the correct details loaded into the SaaS system. and data routed to the correct location based on the image contents; all in a few seconds before returning a response to the customer.
 
 As an ‘extension’ we check if the car is a convertible/roadster.
 
@@ -21,7 +24,7 @@ Business Scenario:
   
   - We want to allow them to send photos of their cars so we can check for type, damage etc.
   
-- We want to check for errors and issues up-front as quickly as possible to feed back to the customer in real time. Photo not valid? No car in the photo? We’ll tell you instantly so you can re-submit.
+  - We want to check for errors and issues up-front as quickly as possible to feed back to the customer in real time. Photo not valid? No car in the photo? We’ll tell you instantly so you can re-submit.
   
   - We want to minimize manual processes and have the repair request automatically create a repair case in our CRM system (Salesforce). If a customer wants to book a repair at 3am on a Sunday, they can – it’s their choice.
   
@@ -29,7 +32,7 @@ Business Scenario:
   
     
   
-  <img src="./images/image-20200608183714387.png" alt="image-20200608183714387" width="80%" />
+  <img src="./images/image-20200608183714387.png" alt="image-20200608183714387" />
 
 
 
@@ -41,13 +44,13 @@ Business Scenario:
 
 # Flow
 
-1. User sends car repair request to API (API Connect)
-2. User request is forwarded to integration flow
-3. Use IBM Watson Visual Recognition to analyze the photo. If it is not a valid picture, Watson will return an error immediately to the user calling the API. Check that Watson can ‘see’ a car in the picture – if not, we will immediately respond back with an error saying ‘There is no car in this picture’ so the error can be corrected immediately.
+1. User sends car repair request to API (API Connect).
+2. User request is forwarded to integration flow.
+3. Use IBM Watson Visual Recognition to analyze the photo. If it is not a valid picture, Watson will return an error immediately to the user calling the API. Check that Watson can `see` a car in the picture – if not, we will immediately respond back with an error saying ‘There is no car in this picture’ so the error can be corrected immediately.
 4. Create a `Case` in Salesforce with the data from the API. This Case is where we store the details and progress of our repair. Also, add an attachment of the photograph to Salesforce so that we have the image stored in our system.
 5. Analyze the description of the problem as described by the customer using IBM Watson Tone Analysis. We store this in Salesforce for future reference – if the customer is angry or upset, we may wish to take further action or treat them more carefully.
 6. This is an extended scenario, wherein if the car is a specialist car (identified by Visual Recognition Service) it is sent to partner for repair. The partner speaks Spanish and and we'll use IBM Watson language translator to translate our request into Spanish before we send it to them
-7. This is an extended scenario as well. Partner uses ServiceNow, not Salesforce so we need to create an incident in their ServiceNow system – automatically
+7. This is an extended scenario as well. Partner uses ServiceNow, not Salesforce so we need to create an incident in their ServiceNow system – automatically.
 8. Send a response back to the customer with their Salesforce case reference for future enquiries and also an estimate of how long it will take to repair and how much it will cost.
 
 
@@ -58,80 +61,27 @@ Business Scenario:
 
 
 
-We will achieve the above objectives in two parts as follows:
-
-Part1 - In part1, this Code Pattern, we will build and deploy our integration application using App Connect in CP4I. 
-
-Part2 - In part2, we will expose the integration application APIs using API management feature of CP4I. [Use API Management capabilities of ICP4i to expose APIs to the wider world in a controlled manner]()
-
 
 
 # Steps
 
-1. Plan of Work
-   1. Set up our integration systems and services endpoints
-   2. Create an integration flow for our ‘Car Repair Claim API’
-   3. Deploy the API to the Cloud Pak for Integration (ICP4i) runtime
-2. List of things we will need:
-   1. List of Systems and Services Endpoints
-      1. Salesforce:
-      2. IBM Watson – Visual Recognition:
-      3. IBM Watson – Tone Analysis:
-      4. ServiceNow:
-      5. IBM Watson – Language Translation:
-   2. IBM Cloud Pak for Integration (ICP4i) Capability list:
-      1. Application Integration (IBM App Connect):
-      2. Smart Connectors
-      3. API Management (IBM API Connect)
-   3. Some extra things we need for this series:
-      1. An email server and client
-      2. GitHub
-      3. IBM API Connect Toolkit
-3. Getting Started – Setting up the endpoints
-   1. Setting up IBM Watson Services
-      1. Logging in to IBM Cloud
-      2. Creating your free Lite-Plan IBM Watson Services:
-   2. Setting up SalesForce
-4. Getting into the Cloud Pak and Building Your Integration
-   1. Getting into SkyTap and the VMs
-   2. Accessing ICP4i
-   3. Accessing the Designer Integration Tooling
-   4. Connecting the tooling to our endpoints
-   5. Setting up the Salesforce Connection
-   6. Importing the Integration flow into designer
-   7. Reviewing our API Integration Flow:
-      1. Receive the Customer’s car repair request with photograph via an API
-      2. Use IBM Watson Visual Recognition to analyse the photo.
-      3. Check that Watson can ‘see’ a car in the picture
-      4. If not, we will immediately respond back with an error saying ‘There is no car in this picture’
-      5. Create a ‘Case’ in Salesforce with the data from the API.
-      6. Add the photograph to our Salesforce case so we have it stored.
-      7. Analyse the description of the problem as described by the customer using IBM Watson Tone Analysis.
-      8. Send a response back to the customer with their Salesforce case reference
-   8. Starting the flow:
-5. Testing our API Integration Flow
-   1. API Base path
-   2. APIKey / Client ID
-   3. UserID and Password
-6. How we will test the APIs
-   1. $cp4ibasepath
-   2. $cp4iuser and $cp4ipw
-   3. $cp4iclientid
-   4. Setting Environment Variables to test in the ACE Designer
-7. Running the tests and results:
-   1. Test 1: “Chicken Picture” – demotestchicken.sh
-   2. Test2: “Subaru SUV Picture” – demotestsubaru.sh
-8. Deploying the Integration flow to ICP4i RunTime via the App Connect Dashboard
-   1. Exporting the executable bar file:
-   2. Navigating to the App Connect dashboard and importing the .bar file
-      1. Name:
-      2. Which type of image to run:
-      3. IBM App Connect Designer flows
-      4. Docker images
-      5. Integration Server:
-   3. Creating the Connector Credentials Secret:
-      1. Downloading the Configuration Package
-   4. Testing the flow on the ICP4i runtime:
+1. [Plan of Work](#1-plan-of-work)
+   1. [Set up our integration systems and services endpoints](#11-set-up-our-integration-systems-and-services-endpoints)
+   2. [Create an integration flow for our ‘Car Repair Claim API’](#12-create-an-integration-flow-for-our-'car-repair-claim-api')
+   3. [Deploy the API to the Cloud Pak for Integration (ICP4i) runtime](#13-deploy-the-api-to-the-cloud-pak-for-integration-(icp4i)-runtime)
+2. [List of things we will need](#2-list-of-things-we-will-need)
+   1. [List of Systems and Services Endpoints](#21-list-of-systems-and-services-endpoints)
+   2. [IBM Cloud Pak for Integration (ICP4i) Capability list](#22-ibm-cloud-pak-for-integration-(icp4i)-capability-list)
+3. [Getting Started](#3-getting-started)
+   1. [Setting up IBM Watson Services](#31-setting-up-ibm-watson-services)
+   2. [Setting up SalesForce](#32-setting-up-salesforce)
+   3. [Clone git repository](#33-clone-git-repository)
+4. [Setting up Cloud Pak for Integration instance on IBM Cloud](#4-setting-up-cloud-pak-for-integration-instance-on-ibm-cloud)
+5. [Building Your Integration](#5-building-your-integration)
+6. [Testing our API Integration Flow](#6-testing-our-api-integration-flow)
+7. [How we will test the APIs](#7-how-we-will-test-the-apis)
+8. [Running the tests and results](#8-running-the-tests-and-results)
+9. [Deploying the Integration flow to ICP4i RunTime via the App Connect Dashboard](#9-deploying-the-integration-flow-to-icp4i-runtime-via-the-app-connect-dashboard)
 
 
 
@@ -161,7 +111,7 @@ Once we have developed our flow and tested it, we will deploy it to ICP4i runnin
 
 
 
-## 2. List of things we will need:
+## 2. List of things we will need
 
 As this is an integration application, we will need systems and services to integrate to:
 
@@ -169,20 +119,20 @@ As this is an integration application, we will need systems and services to inte
 
 The systems and services we will use are as follows: Instructions for these are further on
 
-#### 2.1.1 Salesforce:
+#### 2.1.1 Salesforce
 
 Salesforce is a CRM system provided as a SaaS i.e. it is hosted in the cloud.
 In this scenario, we as a car repair company will use Salesforce to create and store our car repair claims.
 
 Salesforce allows you to create developer instances/accounts free of charge. You will need a developer account to run these instructions as to how to create them are included and you can set an account up. If you already have a developer Salesforce account, you can use that.
 
-#### 2.1.2 IBM Watson – Visual Recognition:
+#### 2.1.2 IBM Watson – Visual Recognition
 
 IBM Watson is available on the IBM Cloud and also in the IBM Cloud Pak for Data. IBM Cloud lets you create non-expiring free instances of the IBM Watson services that you can use for this exercise (or anything else)
 
 The IBM Watson Visual Recognition service lets you send a picture (.jpg, .png) to Watson and returns a list of things that Watson can ‘see’. In our case, we will use Watson to check if there is a car in the picture and, in the extended version,  if it is a convertible/roadster car or not. If it’s a roadster, we’ll send it to our partners. If it’s not, we’ll repair it ourselves. If there’s no car in the photo, we’ll send it back and let our customer know.
 
-#### 2.1.3 IBM Watson – Tone Analysis:
+#### 2.1.3 IBM Watson – Tone Analysis
 
 IBM Watson can tell if someone is happy or sad or angry or many other emotions!
 
@@ -190,19 +140,19 @@ If your customer is angry, you want to know so you can make them happy – we’
 
 For the ‘extended’ scenario, we will also use:
 
-#### 2.1.4 ServiceNow:
+#### 2.1.4 ServiceNow
 
 ServiceNow is an incident management system which is provided as a SaaS on the cloud. Our repair partner which repairs convertible/droptop cars uses this system to manage their repairs.
 
 ServiceNow allows you to create free developer instances as well – you will need one if you want to implement the extended scenario.
 
-#### 2.1.5 IBM Watson – Language Translation:
+#### 2.1.5 IBM Watson – Language Translation
 
 Our convertible car repair partners speak Spanish – and our Spanish isn’t great (yours might be!).
 
 Fortunately Watson speaks Spanish and many other languages better than we do, so we’ll use Watson to translate our ‘please repair this car’ request before we put the request into our partner’s ServiceNow system.
 
-### 2.2 IBM Cloud Pak for Integration (ICP4i) Capability list:
+### 2.2 IBM Cloud Pak for Integration (ICP4i) Capability list
 
 The Cloud Pak for Integration contains components and capabilities to implement multiple integration patterns – we won’t be using all of them in this exercise.
 
@@ -210,7 +160,7 @@ In part2 of the series, we will be using the secure gateway (DataPower) to secur
 
 We will use the following ICP4i capabilities in this series:
 
-#### 2.2.1 Application Integration (IBM App Connect):
+#### 2.2.1 Application Integration (IBM App Connect)
 
 IBM App connect provides a low-code/no code integration capability with a large number of pre-built connectors to connect to a variety of different endpoints.
 
@@ -235,9 +185,7 @@ The connectors will take care of things like authentication, session management,
 
 #### 2.2.3 API Management (IBM API Connect)
 
-Once we have our integration API built, we need to expose it securely to the outside world via an API gateway.
-
-We also need to be able to create a self-service portal to allow consumers to discover out APIs and sign up to use them.
+Once we have our integration API built, we need to expose it securely to the outside world via an API gateway. We also need to be able to create a self-service portal to allow consumers to discover our APIs and sign up to use them.
 
 We also need to create rate plans to limit how many times the API can be called.
 
@@ -249,7 +197,7 @@ We will use this capability in part2 of our series.
 
 
 
-## 3. Getting Started – Setting up the endpoints
+## 3. Getting Started
 
 Before we can build our API integration, we need to set up the endpoints that we need will integrate to.
 
@@ -289,7 +237,7 @@ Once you’re in, you’ll be presented with the cloud dashboard showing which s
 <img src="./images/image-20200609204306444.png" alt="image-20200609204306444" />
 
 
-(You may not see this many services, clusters etc – the lab authors have many things in their IBM Cloud accounts.)
+(You may not see this many services, clusters etc – the authors have many things in their IBM Cloud accounts.)
 
 If you already have the IBM Watson services in your account, or you know how to create them then skip to ‘Obtaining your Watson Credentials’
 
@@ -307,7 +255,7 @@ Scroll down and click on the `Visual Recognition` tile.
 
 <img src="./images/image-20200609213928692.png" alt="image-20200609213928692" width="30%" />
 
-Inside, you’ll be able create a lite plan (free) instance as shown in the screenshot below (ignore the warning on our screenshot about only being able to have one lite plan per account– that’s because we already had one lite instance set up in the lab authors’ IBM Cloud Account)
+Inside, you’ll be able create a lite plan (free) instance as shown in the screenshot below (ignore the warning on our screenshot about only being able to have one lite plan per account– that’s because we already had one lite instance set up in the authors’ IBM Cloud Account)
 
 <img src="./images/image-20200609214115913.png" alt="image-20200609214115913" width="60%" />
 
@@ -327,7 +275,7 @@ Click on your new service and you’ll see the `Manage` tab:
 
 <img src="./images/image-20200609222439728.png" alt="image-20200609222439728" />
 
-The API key and URL are what we are going to need to integrate with the service. You can click `Show credentials` and copy/paste them somewhere for later use in this lab or you can click `Download` and they will be downloaded as a text file for you.
+The API key and URL are what we are going to need to integrate with the service. You can click `Show credentials` and copy/paste them somewhere for later use or you can click `Download` and they will be downloaded as a text file for you.
 
 You’ll next need to do similar for `Language Translator`. It also has `Lite` plans and are set up in the same place on the IBM Cloud. You may choose any region you want.
 
@@ -347,7 +295,7 @@ Go to https://developer.salesforce.com and click on `sign up`
 
 <img src="./images/image-20200609223448761.png" alt="image-20200609223448761" />
 
-Not that this is NOT the same as `salesforce.com -> try for free`. **You will need a developer account to use this lab**. You can use a webmail email address to sign up if you wish, rather than your company one.
+Not that this is NOT the same as `salesforce.com -> try for free`. **You will need a developer account to use this exercise**. You can use a webmail email address to sign up if you wish, rather than your company one.
 
 (we emphasize this a lot but on of the most common reasons for `My integration to Salesforce doesn’t work` is that the account being used is not a developer one).
 
@@ -362,6 +310,18 @@ You will require admin level access to your Salesforce account.
 When you create a free Salesforce account to test, make sure that you create a [Developer account](https://developer.salesforce.com/) rather than a Trial account. If you connect to App Connect with a `Free Trial` account, the Salesforce integrations will not work.
 
 OK, we have our endpoints – we’re ready to integrate!
+
+
+
+### 3.3 Clone git repository
+
+Clone the git repository containing files required to execute some of the steps in this exercise.
+
+Run the following command on a terminal to clone the git repository.
+
+```
+git clone git@github.com:IBM/build-an-integration-application-using-ibm-cloud-pak-for-integration.git
+```
 
 
 
@@ -418,7 +378,7 @@ At any time, we can use the menu to navigate between these capabilities, as well
 
 
 
-> *Occasionally, in the lab environment, you might find that the navigation menu shows ‘0’ instances of the capabilities. Don’t worry, everything is still there!*
+> *Occasionally, in this demo environment, you might find that the navigation menu shows ‘0’ instances of the capabilities. Don’t worry, everything is still there!*
 
 *If this happens, click on ‘Platform home’ in the menu, then click ‘View Instances’ tab. After this, the menu will work again!*
 
@@ -707,7 +667,7 @@ Click `Add file`. Then click `Import`
 
 Refer to ReviewingIntegrationFlow.md
 
-*This section can take some time. If you’re more interested as to how the flow is built, go through this section. If you may be short on time, as the flow is pre-built and we won’t change it you can skip straight to ‘**Starting the flow’** section and come back here later.  There are lots of screen shots, so you can read this lab guide afterwards at your leisure.*
+*This section can take some time. If you’re more interested as to how the flow is built, go through this section. If you may be short on time, as the flow is pre-built and we won’t change it you can skip straight to ‘**Starting the flow’** section and come back here later.  There are lots of screen shots, so you can read this guide afterwards at your leisure.*
 
 To continue reviewing the API Integration Flow, refer to [ReviewingIntegrationFlow.md](./ReviewingIntegrationFlow.md) file
 
@@ -729,7 +689,7 @@ Now our flow is running, we need to test it.
 
 ## 6. Testing our API Integration Flow
 
-Now we’ve built our API, we need to test it. In the course of this lab, we will want to test our APIs in three places:
+Now we’ve built our API, we need to test it. In the course of this exercise, we will want to test our APIs in three places:
 
 - In the App Connect Designer (What we’ve just built)
 - When it’s deployed to the Cloud Pak App Connect Runtime
@@ -757,7 +717,7 @@ This is used by the App Connect Designer to authenticate users.
 
 APIs can be tested in a number of different ways, for example using the IBM API Test and Monitor tool – available for free here: https://www.ibm.com/uk-en/cloud/api-connect/api-test
 
-For simplicity and speed, as we’re using base64 pictures, we will use simple curl scripts so that we can call the APIs from the command line – we can also use these in CI/CD pipelines if we want.
+For simplicity and speed, as we’re using base64 pictures, we will use simple curl scripts so that we can call the APIs from the command line – we can also use these in CI/CD pipelines if we want. `New credential`
 
 Our curl scripts start like this:
 
@@ -799,11 +759,7 @@ These are the userID and Password for the designer instance
 
 This is the clientid – this is used for authentication for API Connect.
 
-The test scripts are pre-built on github ready for you to use. The scripts are available in the cloned git repository.
-
-```
-**TODO Check if git clone command instructions are already provided**
-```
+The test scripts are pre-built on github ready for you to use. The scripts are available in the cloned git repository which was cloned in earlier steps in this guide.
 
 ### 7.4 Setting Environment Variables to test in the ACE Designer
 
@@ -989,13 +945,13 @@ The configuration package is a template where we can put all of our credentials 
 
 You’ll see the following configuration options:
 
-### 9.2.1 Name:
+### 9.2.1 Name
 
 A name for the server – we’re going to use ‘carrepair01’ – if you see errors with your name, one key thing is that the name must be lower case.
 
-### 9.2.2 Which type of image to run:
+### 9.2.2 Which type of image to run
 
-Select “App Connect Enterprise only” – the other options are if you want to connect to IBM MQ – in this case, we don’t need that as we are not connecting to MQ in this lab.
+Select “App Connect Enterprise only” – the other options are if you want to connect to IBM MQ – in this case, we don’t need that as we are not connecting to MQ in this exercise.
 
 ### 9.2.3 IBM App Connect Designer flows
 
@@ -1009,7 +965,7 @@ Enter ‘ibm-entitlement-key’
 
 The deployment is going to create some pods with App Connect container images – we need to be able to pull those images to create the pods.
 
-### 9.2.5 Integration Server:
+### 9.2.5 Integration Server
 
 This is the Kubernetes secret that we will create to store the userids and passwords: We will give it a name now: we will call ours carrepaircreds01
 
@@ -1023,7 +979,7 @@ When you refresh, you should see this in your dashboard:
 
 ![image-20200617153934266](./images/image-20200617153934266.png)
 
-You may find that you initially see what looks like an error – this is the cloud pak spinning up 3 pods of the integration server – it won’t show a green tick until all the pods are running. Give it a few minutes or so and refresh your browser. You can leave it in this state for a bit and get on with the next part of the lab if you wish.
+You may find that you initially see what looks like an error – this is the cloud pak spinning up 3 pods of the integration server – it won’t show a green tick until all the pods are running. Give it a few minutes or so and refresh your browser. You can leave it in this state for a bit and get on with the next part of this exercise if you wish.
 
 <img src="./images/image-20200617154008866.png" alt="image-20200617154008866" width="30%" />
 
@@ -1043,7 +999,7 @@ We can test this if we wish! (It’s not compulsory…). Use the same curl scrip
 
 (Not that you’ll need to make sure you have the /CarRepairClaim at the end of the URL).
 
-## 9.3 Creating the Connector Credentials Secret:
+## 9.3 Creating the Connector Credentials Secret
 
 Before we can deploy our integration flow, we need to create a Kubernetes secret to hold our credentials.
 
