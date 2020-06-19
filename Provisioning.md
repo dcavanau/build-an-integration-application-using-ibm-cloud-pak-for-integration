@@ -5,11 +5,11 @@ We will be deploying CP4I on OpenShift cluster. CP4I instance will have App Conn
 
 - Login to your IBM Cloud account. On the dashboard, click on `Catalog`. Search for `Cloud Pak for Integration` and click on the `Cloud Pak for Integration` tile as shown in below image.
 
-  <img src="/Users/muralidhar/Murali/Work/Code Patterns/2CodeRepos/2020/build-an-integration-application-using-ibm-cloud-pak-for-integration/images/image-20200610145305335.png" alt="image-20200610145305335" style="zoom:40%;" align="left"/>
+  <img src="./images/image-20200610145305335.png" alt="image-20200610145305335" style="zoom:40%;" align="left"/>
 
 Under `Configure your installation environment`, make a note of the minimum requirements. Note that this is just a bare minimum requirement for CP4I instance. But since we will be adding ACE and APIC, we'll see what additional requirements are needed. Click on `Readme` tab.
 
-<img src="/Users/muralidhar/Murali/Work/Code Patterns/2CodeRepos/2020/build-an-integration-application-using-ibm-cloud-pak-for-integration/images/image-20200610150025521.png" alt="image-20200610150025521" style="zoom:50%;" align="left"/>
+<img src="./images/image-20200610150025521.png" alt="image-20200610150025521" style="zoom:50%;" align="left"/>
 
 
 
@@ -17,7 +17,7 @@ Under `Configure your installation environment`, make a note of the minimum requ
 
 For each of the additional capabilities, requirements are specified. However for us we do not need to calculate individual requirements. We have an option with all required components. Scroll down, in configuration section, notice the `demoPreparation` configuration. We will be using this configuration to install CP4I. Make a note of additional requirements for this configuration in description. 
 
-<img src="/Users/muralidhar/Murali/Work/Code Patterns/2CodeRepos/2020/build-an-integration-application-using-ibm-cloud-pak-for-integration/images/image-20200610151658967.png" alt="image-20200610151658967" style="zoom:40%;" align="left" />
+<img src="./images/image-20200610151658967.png" alt="image-20200610151658967" style="zoom:40%;" align="left" />
 
 
 
@@ -39,25 +39,25 @@ Now, that we have the requirements, we will create an instance of OpenShift Clus
 
 - Navigate to IBM Cloud dashboard. Click on `Catalog` and search for `OpenShift`. And click on `Red Hat OpenShift on IBM Cloud` tile.
 
-  <img src="/Users/muralidhar/Murali/Work/Code Patterns/2CodeRepos/2020/build-an-integration-application-using-ibm-cloud-pak-for-integration/images/image-20200611123826425.png" alt="image-20200611123826425" style="zoom:45%;" align="left" />
+  <img src="./images/image-20200611123826425.png" alt="image-20200611123826425" style="zoom:45%;" align="left" />
 
   
 
 - Choose the latest version of OpenShift
 
-  <img src="/Users/muralidhar/Murali/Work/Code Patterns/2CodeRepos/2020/build-an-integration-application-using-ibm-cloud-pak-for-integration/images/image-20200611131232249.png" alt="image-20200611131232249" style="zoom:50%;" align="left" />
+  <img src="./images/image-20200611131232249.png" alt="image-20200611131232249" style="zoom:50%;" align="left" />
 
   
 
 - Under `OCP entitlement` select the one appropriate for you. Applying entitlement will not charge you with license cost but the hourly/monthly charges will anyway be charged.
 
-  <img src="/Users/muralidhar/Murali/Work/Code Patterns/2CodeRepos/2020/build-an-integration-application-using-ibm-cloud-pak-for-integration/images/image-20200611132252431.png" alt="image-20200611132252431" style="zoom:60%;" align="left" />
+  <img src="./images/image-20200611132252431.png" alt="image-20200611132252431" style="zoom:60%;" align="left" />
 
   
 
 - Select `Geography`, `Availability` and `Worker zone`. For this task, we have selected as shown in below image. Refer this [link](https://cloud.ibm.com/docs/containers?topic=containers-planning_worker_nodes) for details on various options available.
 
-  ![image-20200615141108125](/Users/muralidhar/Murali/Work/Code Patterns/2CodeRepos/2020/build-an-integration-application-using-ibm-cloud-pak-for-integration/images/image-20200615141108125.png)
+  ![image-20200615141108125](./images/image-20200615141108125.png)
 
   
 
@@ -65,18 +65,20 @@ Now, that we have the requirements, we will create an instance of OpenShift Clus
 
   - Here we need to select how many nodes we want and what will be the configuration of each node.
   - From the minimum requirement calculated above, we need 69.05 cores, 152.5 GB Memory and 594.8 GB of disk space. In this example, we select 5 nodes, each having about 16 vCPUs, 32 GB of Memory and 125 GB of disk space, which will add up to be more than sufficient for our requirement. 
-  - ![image-20200615153521238](/Users/muralidhar/Murali/Work/Code Patterns/2CodeRepos/2020/build-an-integration-application-using-ibm-cloud-pak-for-integration/images/image-20200615153521238.png)
+  - ![image-20200615153521238](./images/image-20200615153521238.png)
   - Click on `Change Flavor` and select an entry with `16 vCPUs 32 GB RAM` and click on `Done`.
   - Change `Worker nodes per data center` to 5.
   - Leave rest of the options to default values.
 
 - On the right side of the screen, `Estimated monthly cost` is shown. Be sure to verify that you are fine with it before proceeding.
 
-  <img src="/Users/muralidhar/Murali/Work/Code Patterns/2CodeRepos/2020/build-an-integration-application-using-ibm-cloud-pak-for-integration/images/image-20200615153902816.png" alt="image-20200615153902816" style="zoom:50%;" align="left" />
+  <img src="./images/image-20200615153902816.png" alt="image-20200615153902816" style="zoom:50%;" align="left" />
 
 - Click on `Create` button to create this cluster. The cluster creation takes about 30 minutes. 
 
 - To check the status of cluster, navigate to your IBM Cloud dashboard and click on `Clusters`. Verify the `Status` of the cluster you created is `Normal`.
+
+  
 
 ### 3. Setting up Cloud Pak for Integration
 
@@ -84,7 +86,7 @@ We will be installing CP4I instance on Red Hat OpenShift cluster on IBM Cloud. W
 
 - Navigate to your IBM Cloud dashboard. On the dashboard, click on `Catalog`. Search for `Cloud Pak for Integration` and click on the `Cloud Pak for Integration` tile as shown in below image.
 
-  <img src="/Users/muralidhar/Murali/Work/Code Patterns/2CodeRepos/2020/build-an-integration-application-using-ibm-cloud-pak-for-integration/images/image-20200610145305335.png" alt="image-20200610145305335" style="zoom:40%;" align="left"/>
+  <img src="./images/image-20200610145305335.png" alt="image-20200610145305335" style="zoom:40%;" align="left"/>
 
 - Under `Red Hat OpenShift cluster` select the cluster name that you created in previous steps.
 
@@ -100,7 +102,7 @@ We will be installing CP4I instance on Red Hat OpenShift cluster on IBM Cloud. W
 
 - Expand `Parameters with default value` by clicking the down arrow mark.
 
-  ![image-20200615165708129](/Users/muralidhar/Murali/Work/Code Patterns/2CodeRepos/2020/build-an-integration-application-using-ibm-cloud-pak-for-integration/images/image-20200615165708129.png)
+  ![image-20200615165708129](./images/image-20200615165708129.png)
 
 - Scroll a little down and you will see the parameter `demoPreparation`. Change the default value from false to `true`. 
 
@@ -112,13 +114,15 @@ We will be installing CP4I instance on Red Hat OpenShift cluster on IBM Cloud. W
 
 - When the installation is complete, go to your IBM Cloud dashboard and click `Schematics workspaces`
 
-  ![image-20200615171009495](/Users/muralidhar/Murali/Work/Code Patterns/2CodeRepos/2020/build-an-integration-application-using-ibm-cloud-pak-for-integration/images/image-20200615171009495.png)
+  ![image-20200615171009495](./images/image-20200615171009495.png)
 
 - Scroll down to the `Schematics workspaces` section and verify that the CP4I instance that your created is listed here and is in `Active` status
 
-  ![image-20200615171238683](/Users/muralidhar/Murali/Work/Code Patterns/2CodeRepos/2020/build-an-integration-application-using-ibm-cloud-pak-for-integration/images/image-20200615171238683.png)
+  ![image-20200615171238683](./images/image-20200615171238683.png)
 
 
 
 This completes your CP4I installation on IBM Cloud.
+
+Go back to [main document](./Readme.md) for further documentation.
 
