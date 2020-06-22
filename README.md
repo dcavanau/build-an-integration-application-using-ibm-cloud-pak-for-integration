@@ -6,7 +6,7 @@
 
 Every enterprise in today's markets must offer robust digital products and services, often requiring integration of complex capabilities and systems to deliver one coherent whole. [IBM Cloud Pak for Integration](https://cloud.ibm.com/docs/cloud-pak-integration?topic=cloud-pak-integration-getting-started) offers a simplified solution to this integration challenge, allowing the enterprise to modernize its processes while positioning itself for future innovation. Once installed, IBM Cloud Pak for Integration eases monitoring, maintenance and upgrades, helping the enterprise stay ahead of the innovation curve.
 
-In this code pattern will use Integration Designer to create an API which takes a car repair claim request, complete with a photograph of the car, and integrates with a SaaS CRM system and IBM’s Watson AI to create a car repair case with all the correct details loaded into the SaaS system. and data routed to the correct location based on the image contents; all in a few seconds before returning a response to the customer.
+In this tutorial will use Integration Designer to create an API which takes a car repair claim request, complete with a photograph of the car, and integrates with a SaaS CRM system and IBM’s Watson AI to create a car repair case with all the correct details loaded into the SaaS system. and data routed to the correct location based on the image contents; all in a few seconds before returning a response to the customer.
 
 As an ‘extension’ we check if the car is a convertible/roadster.
 
@@ -77,13 +77,13 @@ Business Scenario:
 3. [Getting Started](#3-getting-started)
    1. [Setting up IBM Watson Services](#31-setting-up-ibm-watson-services)
    2. [Setting up SalesForce](#32-setting-up-salesforce)
-   3. [Clone git repository](#33-clone-git-repository)
 4. [Setting up Cloud Pak for Integration instance on IBM Cloud](#4-setting-up-cloud-pak-for-integration-instance-on-ibm-cloud)
 5. [Building Your Integration](#5-building-your-integration)
 6. [Testing our API Integration Flow](#6-testing-our-api-integration-flow)
 7. [How we will test the APIs](#7-how-we-will-test-the-apis)
 8. [Running the tests and results](#8-running-the-tests-and-results)
 9. [Deploying the Integration flow to ICP4i RunTime via the App Connect Dashboard](#9-deploying-the-integration-flow-to-icp4i-runtime-via-the-app-connect-dashboard)
+10. [Summary](#10-summary)
 
 
 
@@ -319,20 +319,6 @@ OK, we have our endpoints – we’re ready to integrate!
 
 
 
-### 3.3 Clone git repository
-
-We will clone git repository that 
-
-Clone the git repository containing files required to execute some of the steps in this tutorial.
-
-Run the following command on a terminal to clone the git repository.
-
-```
-git clone git@github.com:IBM/build-an-integration-application-using-ibm-cloud-pak-for-integration.git
-```
-
-
-
 ## 4. Setting up Cloud Pak for Integration instance on IBM Cloud
 
 We will create an instance of Cloud Pak for Integration on IBM Cloud. You can find more about CP4I [here](https://www.ibm.com/cloud/cloud-pak-for-integration1). 
@@ -359,7 +345,7 @@ Scroll down to the `Schematics workspaces` section and click on the workspace yo
 
 
 
-If you see any certificate issue, you can select to proceed to unsafe website/link. You’ll be presented with a login screen to CP4I. Use `admin` as username and the password that you set while following `Provisioning` instructions. Click on `Login`. 
+If you see any certificate issue, you can select to proceed to unsafe website/link. You’ll be presented with a login screen to CP4I. Use `admin` as username and the password that you set while following [Provisioning instructions](./Provisioning.md). Click on `Login`. 
 
 Click on `Skip Welcome` , if a welcome page is displayed. 
 
@@ -377,11 +363,11 @@ Click `View instances` to see the capabilities added in CP4I instance using the 
 
 
 
-You can see that we have App Connect Designer (the tooling for building integrations), the App Connect Dashboard (this is what manages the integration runtimes) and API Connect (for managing APIs).
+You can see that we have `App Connect Designer` (the tooling for building integrations), the `App Connect Dashboard` (this is what manages the integration runtimes) and `API Connect` (for managing APIs).
 
 (Don’t worry if your instance names are not identical to the screenshots)
 
-At any time, we can use the menu to navigate between these capabilities, as well as using the platform home screen. Use the `hamburger` menu at the top left like so:
+At any time, we can use the menu to navigate between these capabilities, as well as using the platform home screen. Use the hamburger menu at the top left like so:
 
 <img src="./images/image-20200615231615577.png" alt="image-20200615231615577" width="47%" />
 
@@ -389,7 +375,7 @@ At any time, we can use the menu to navigate between these capabilities, as well
 
 > *Occasionally, in this demo environment, you might find that the navigation menu shows ‘0’ instances of the capabilities. Don’t worry, everything is still there!*
 
-*If this happens, click on ‘Platform home’ in the menu, then click ‘View Instances’ tab. After this, the menu will work again!*
+*If this happens, click on `Platform home` in the menu, then click `View Instances` tab. After this, the menu will work again!*
 
 
 
@@ -401,7 +387,7 @@ Click on `ace-designer-demo` under `App Connect`. You’ll arrive at the App Con
 
 This is where we can create all of our API integration flows and also manage our connectivity to our services and endpoints. You can create many integration flows and manage them all here.
 
-At the moment, there’s nothing here ye, so let’s build some integration logic.
+At the moment, there’s nothing here yet, so let’s build some integration logic.
 
 First, we’re going to connect the designer tooling to our endpoints that we set up earlier.
 
@@ -415,7 +401,7 @@ Let’s go to the connector catalog: click on the cogwheel/sprocket menu and cli
 
 ![image-20200615232502528](./images/image-20200615232502528.png)
 
-The connector catalog appears with a list of the cloud pak connectors which are installed locally. There are many more connectors available although not all all of them run ‘locally’. Some of the connectors are currently available in the pak locally, all of them are available on the IBM cloud – you can use the ones that run on the IBM cloud directly from ICP4i designer as well – you just need to link ICP4i to your IBM cloud account, which we won’t be doing in this code pattern.
+The connector catalog appears with a list of the cloud pak connectors which are installed locally. There are many more connectors available although not all all of them run ‘locally’. Some of the connectors are currently available in the pak locally, all of them are available on the IBM cloud – you can use the ones that run on the IBM cloud directly from ICP4i designer as well – you just need to link ICP4i to your IBM cloud account, which we won’t be doing in this tutorial.
 
 More connectors are being developed constantly – for a list, look here: https://www.ibm.com/cloud/app-connect/connectors/
 
@@ -429,7 +415,7 @@ Let’s set up our Watson AI endpoints – scroll down until you see the IBM Wat
 
 
 
-Click on ‘IBM Watson Visual Recognition’. 
+Click on `IBM Watson Visual Recognition`. 
 
 You’ll see that the connector expands and shows you the actions available for the connector.
 
@@ -437,7 +423,7 @@ ICP4i connectors are smart connectors and are metadata driven – you don’t ne
 
 <img src="./images/image-20200616093644485.png" alt="image-20200616093644485" width="50%" />
 
-Click on `Connect`
+Click on `Connect`.
 
 You may be be asked if you want to run the connector `local` (runs on ICP4i) or on the IBM Cloud. If asked, for this task click `Local` and click `Connect`.
 
@@ -511,7 +497,7 @@ Click `Connect` and select `Local` for the connector location (if asked) then en
 
 Click `Connect`
 
-IMPORTANT – FOR THIS CODE PATTERN, RENAME THE ACCOUNT to `App Connect Trial`. (use the three dots menu and click `Rename Account` )
+IMPORTANT – FOR THIS TUTORIAL, RENAME THE ACCOUNT to `App Connect Trial`. (use the three dots menu and click `Rename Account` )
 
 It should look like this:
 
@@ -676,9 +662,9 @@ Click `Add file`. Then click `Import`
 
 Refer to ReviewingIntegrationFlow.md
 
-*This section can take some time. If you’re more interested as to how the flow is built, go through this section. If you may be short on time, as the flow is pre-built and we won’t change it you can skip straight to ‘**Starting the flow’** section and come back here later.  There are lots of screen shots, so you can read this guide afterwards at your leisure.*
+*This section can take some time. If you’re more interested as to how the flow is built, go through this section. If you may be short on time, as the flow is pre-built and we won’t change it you can skip straight to [Starting the flow](#56-starting-the-flow) section.*
 
-To continue reviewing the API Integration Flow, refer to [ReviewingIntegrationFlow.md](./ReviewingIntegrationFlow.md) file
+Since there are lots of screen shots, so you can read this guide afterwards at your leisure. Also the guide is provided in a different file [here](./ReviewingIntegrationFlow.md).
 
 ### 5.6 Starting the flow
 
@@ -772,11 +758,11 @@ The test scripts are pre-built on github ready for you to use. The scripts are a
 
 ### 7.4 Setting Environment Variables to test in the ACE Designer
 
-To get the credentials for the designer, we go to the ‘Manage’ tab in designer.
+To get the credentials for the designer, we go to the `Manage` tab in designer.
 
 ![image-20200617145700745](./images/image-20200617145700745.png)
 
-This gives us the values for running the following commands in the terminal. ‘export’ is unix-speak for ‘set the environment variable’
+This gives us the values for running the following commands in the terminal. `export` is unix-speak for ‘set the environment variable’
 
 export cp4ibasepath=https://ace-design-https-ace.apps.demo.ibmdte.net/Car_Insurance_Cognitive_API_Lab_Short
 
@@ -900,17 +886,15 @@ When we deploy, it will create a 3 HA replica container pods running on OpenShif
 
 ### 9.1 Exporting the executable bar file
 
-To export the .bar file, go into the designer dashboard and click the ‘…’ menu on the integration tile and click ‘Export…’
+To export the .bar file, go into the designer dashboard and click the `…` menu on the integration tile and click `Export…`
 
 <img src="./images/image-20200617152533827.png" alt="image-20200617152533827" width="50%" />
 
-You’ll get a dialog box. Select ‘Export for integration server (BAR)’ and click ‘Export’
+You’ll get a dialog box. Select `Export for integration server (BAR)` and click `Export`
 
 <img src="./images/image-20200617152600995.png" alt="image-20200617152600995" width="70%" />
 
 The browser may prompt you for a download location – otherwise it will place the ‘Car_Insurance_Cognitive_API_Lab_Short.bar’ file in the Downloads directory.
-
-The ‘Export for IBM managed cloud’ is the YAML source for the flow. It’s what we exported to git. You can import and export .yaml flows as you wish – they are source, not executables.
 
 That’s it – we now have our executable flow – let’s see what we need to do to deploy it.
 
@@ -1158,3 +1142,12 @@ Demotestchicken.sh will give an error as there is no car, but demotestsubaru.sh 
 
 
 
+## 10. Summary
+
+In this tutorial we saw how we used IBM Cloud Pak for Integration to build an integration flow application, Car Repair Claim. The flow connected to various other services, both IBM and non-IBM services. We used no code/low code approach to build the application. The coomplete integration of application is a matter of just a few hours. 
+
+You can continue to host the APIs in API Management capabilities of CP4I. The next part of this series demonstrates how to Manage the API, applying security and rate-plans and publish it to our Self-Service Portal. 
+
+
+
+Related links
