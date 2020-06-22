@@ -1,6 +1,6 @@
 # Review API Integration Flow
 
-Login to CP4I and navigate to App Connect Designer. Click on the `Car Insurance Cognitive API Lab Short` tile on the dashboard.
+Login to ICP4i and navigate to App Connect Designer. Click on the `Car Insurance Cognitive API Lab Short` tile on the dashboard.
 
 <img src="/Users/muralidhar/Murali/Work/Code Patterns/2CodeRepos/2020/build-an-integration-application-using-ibm-cloud-pak-for-integration/images/image-20200616161203051.png" alt="image-20200616161203051" style="zoom:50%;" align="left"/>
 

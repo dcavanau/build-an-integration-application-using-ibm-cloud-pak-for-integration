@@ -5,4 +5,4 @@ In this series, will use Integration Designer to create an API which takes a car
 
 The series will consist of two parts as follows:
 Part1: Is a Code Pattern and demonstrates building and hosting of Integration Application. More details [here](https://github.ibm.com/IBMCode/IBMCodeContent/issues/4407)
-Part2: Will be a tutorial and demonstrates API Management capabilities of CP4I to Manage the API, apply security and rate-plans and publish it to a Self-Service Portal. More details [here](https://github.ibm.com/IBMCode/IBMCodeContent/issues/4504)
+Part2: Will be a tutorial and demonstrates API Management capabilities of ICP4i to Manage the API, apply security and rate-plans and publish it to a Self-Service Portal. More details [here](https://github.ibm.com/IBMCode/IBMCodeContent/issues/4504)

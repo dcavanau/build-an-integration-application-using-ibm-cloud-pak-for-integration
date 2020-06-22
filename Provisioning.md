@@ -1,13 +1,13 @@
 # Setting up Cloud Pak for Integration on IBM Cloud
 ### 1. Get sizing information
 
-We will be deploying CP4I on OpenShift cluster. CP4I instance will have App Connect and API Connect capabilities added to it. So the amount of resources required for CP4I, with the capabilities mentioned, installation will be huge. Let's get that information before we get to provisioning OpenShift cluster.
+We will be deploying ICP4i on OpenShift cluster. ICP4i instance will have App Connect and API Connect capabilities added to it. So the amount of resources required for ICP4i, with the capabilities mentioned, installation will be huge. Let's get that information before we get to provisioning OpenShift cluster.
 
 - Login to your IBM Cloud account. On the dashboard, click on `Catalog`. Search for `Cloud Pak for Integration` and click on the `Cloud Pak for Integration` tile as shown in below image.
 
   <img src="./images/image-20200610145305335.png" alt="image-20200610145305335" style="zoom:40%;" align="left"/>
 
-Under `Configure your installation environment`, make a note of the minimum requirements. Note that this is just a bare minimum requirement for CP4I instance. But since we will be adding ACE and APIC, we'll see what additional requirements are needed. Click on `Readme` tab.
+Under `Configure your installation environment`, make a note of the minimum requirements. Note that this is just a bare minimum requirement for ICP4i instance. But since we will be adding ACE and APIC, we'll see what additional requirements are needed. Click on `Readme` tab.
 
 <img src="./images/image-20200610150025521.png" alt="image-20200610150025521" style="zoom:50%;" align="left"/>
 
@@ -15,7 +15,7 @@ Under `Configure your installation environment`, make a note of the minimum requ
 
 
 
-For each of the additional capabilities, requirements are specified. However for us we do not need to calculate individual requirements. We have an option with all required components. Scroll down, in configuration section, notice the `demoPreparation` configuration. We will be using this configuration to install CP4I. Make a note of additional requirements for this configuration in description. 
+For each of the additional capabilities, requirements are specified. However for us we do not need to calculate individual requirements. We have an option with all required components. Scroll down, in configuration section, notice the `demoPreparation` configuration. We will be using this configuration to install ICP4i. Make a note of additional requirements for this configuration in description. 
 
 <img src="./images/image-20200610151658967.png" alt="image-20200610151658967" style="zoom:40%;" align="left" />
 
@@ -23,11 +23,11 @@ For each of the additional capabilities, requirements are specified. However for
 
 Following table shows total minimum requirement:
 
-|                          |  Cores  |Memory (GB)|Disk Space (GB) |
-| -------------------------|:-------:|:---------:|:-------------: |
-| ICP4I minimum requirement|    8    |    32     |      25        |
-| Demo preparation         |  61.05  |   120.5   |     569.8      |
-| Total                    |**69.05**| **152.5** |   **594.8**    |
+|                           |   Cores   | Memory (GB) | Disk Space (GB) |
+| ------------------------- | :-------: | :---------: | :-------------: |
+| ICP4i minimum requirement |     8     |     32      |       25        |
+| Demo preparation          |   61.05   |    120.5    |      569.8      |
+| Total                     | **69.05** |  **152.5**  |    **594.8**    |
 
 
 
@@ -82,7 +82,7 @@ Now, that we have the requirements, we will create an instance of OpenShift Clus
 
 ### 3. Setting up Cloud Pak for Integration
 
-We will be installing CP4I instance on Red Hat OpenShift cluster on IBM Cloud. We will use the cluster created in previous steps. 
+We will be installing ICP4i instance on Red Hat OpenShift cluster on IBM Cloud. We will use the cluster created in previous steps. 
 
 - Navigate to your IBM Cloud dashboard. On the dashboard, click on `Catalog`. Search for `Cloud Pak for Integration` and click on the `Cloud Pak for Integration` tile as shown in below image.
 
@@ -110,19 +110,19 @@ We will be installing CP4I instance on Red Hat OpenShift cluster on IBM Cloud. W
 
 - On the right hand side of the window, checkmark the license agreement and click `Install`. 
 
-- The installation of CP4I, with ACE and APIC, will take about an hour or so. 
+- The installation of ICP4i, with ACE and APIC, will take about an hour or so. 
 
 - When the installation is complete, go to your IBM Cloud dashboard and click `Schematics workspaces`
 
   ![image-20200615171009495](./images/image-20200615171009495.png)
 
-- Scroll down to the `Schematics workspaces` section and verify that the CP4I instance that your created is listed here and is in `Active` status
+- Scroll down to the `Schematics workspaces` section and verify that the ICP4i instance that your created is listed here and is in `Active` status
 
   ![image-20200615171238683](./images/image-20200615171238683.png)
 
 
 
-This completes your CP4I installation on IBM Cloud.
+This completes your ICP4i installation on IBM Cloud.
 
 Go back to [main document](./Readme.md) for further documentation.
 

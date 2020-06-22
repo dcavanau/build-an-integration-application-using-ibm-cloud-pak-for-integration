@@ -2,7 +2,7 @@
 
 
 
-# Build a Cognitive Car Claim Processing application with CP4I Integration capabilities
+# Build a Cognitive Car Claim Processing application with ICP4i Integration capabilities
 
 Every enterprise in today's markets must offer robust digital products and services, often requiring integration of complex capabilities and systems to deliver one coherent whole. [IBM Cloud Pak for Integration](https://cloud.ibm.com/docs/cloud-pak-integration?topic=cloud-pak-integration-getting-started) offers a simplified solution to this integration challenge, allowing the enterprise to modernize its processes while positioning itself for future innovation. Once installed, IBM Cloud Pak for Integration eases monitoring, maintenance and upgrades, helping the enterprise stay ahead of the innovation curve.
 
@@ -321,17 +321,17 @@ OK, we have our endpoints – we’re ready to integrate!
 
 ## 4. Setting up Cloud Pak for Integration instance on IBM Cloud
 
-We will create an instance of Cloud Pak for Integration on IBM Cloud. You can find more about CP4I [here](https://www.ibm.com/cloud/cloud-pak-for-integration1). 
+We will create an instance of Cloud Pak for Integration on IBM Cloud. You can find more about ICP4i [here](https://www.ibm.com/cloud/cloud-pak-for-integration1). 
 
-> If you already have a CP4I instance with App Connect and API Connect capabilities added, feel free to use your existing instance. You may skip this section and jump to [Building your Integration](#5-building-your-integration).
+> If you already have a ICP4i instance with App Connect and API Connect capabilities added, feel free to use your existing instance. You may skip this section and jump to [Building your Integration](#5-building-your-integration).
 
-To setup CP4I instance on IBM Cloud, refer [CP4I provisioning on IBM Cloud instructions](./Provisioning.md).
+To setup ICP4i instance on IBM Cloud, refer [CP4I provisioning on IBM Cloud instructions](./Provisioning.md).
 
 
 
 ## 5. Building Your Integration
 
-### 5.1 Accessing CP4I
+### 5.1 Accessing ICP4i
 
 Login to your IBM Cloud dashboard and click `Schematics workspaces`![image-20200615171009495](./images/image-20200615171009495.png)
 
@@ -345,7 +345,7 @@ Scroll down to the `Schematics workspaces` section and click on the workspace yo
 
 
 
-If you see any certificate issue, you can select to proceed to unsafe website/link. You’ll be presented with a login screen to CP4I. Use `admin` as username and the password that you set while following [Provisioning instructions](./Provisioning.md). Click on `Login`. 
+If you see any certificate issue, you can select to proceed to unsafe website/link. You’ll be presented with a login screen to ICP4i. Use `admin` as username and the password that you set while following [Provisioning instructions](./Provisioning.md). Click on `Login`. 
 
 Click on `Skip Welcome` , if a welcome page is displayed. 
 
@@ -357,7 +357,7 @@ We’re going to be using API Connect and App Connect for this tutorial.
 
 
 
-Click `View instances` to see the capabilities added in CP4I instance using the option `demoPreparation` while installing CP4I.
+Click `View instances` to see the capabilities added in ICP4i instance using the option `demoPreparation` while installing ICP4i.
 
 ![image-20200615231154274](./images/image-20200615231154274.png)
 
@@ -644,13 +644,13 @@ There is a lot of detailed designer flow documentation for when you want to delv
 
 Enter the following into the `Specify a file URL` field:
 
-https://raw.githubusercontent.com/IBM/build-an-integration-application-using-ibm-cloud-pak-for-integration/master/Car%20Insurance%20Cognitive%20API%20Lab%20Short.yaml
+[https://raw.githubusercontent.com/garrata/carrepairdemo/master/Car%20Insurance%20Cognitive%20API%20Lab%20Short.yaml](https://raw.githubusercontent.com/garrata/carrepairdemo/master/Car Insurance Cognitive API Lab Short.yaml)
 
 (The %20 are how spaces are represented in a URL – they flow name has spaces in it, not %20)
 
 <img src="./images/image-20200616123416889.png" alt="image-20200616123416889" width="50%" />
 
-(This is the address of the ‘Car Insurance Cognitive API Lab.yaml’ flow in our git repository)
+(This is the address of the ‘Car Insurance Cognitive API Lab.yaml’ flow in the git repository)
 
 Click `Add file`. Then click `Import` 
 
@@ -754,7 +754,29 @@ These are the userID and Password for the designer instance
 
 This is the clientid – this is used for authentication for API Connect.
 
-The test scripts are pre-built on github ready for you to use. The scripts are available in the cloned git repository which was cloned in earlier steps in this guide.
+The test scripts are pre-built on github ready for you to use. 
+
+We will use curl to download the scripts from github to our machine. Note that -o in curl means ‘write to an output file’ rather than display the result on the screen.
+
+In the terminal window, enter the following commands:
+
+curl [https://raw.githubusercontent.com/garrata/carrepairdemo/master/demotestchicken.sh -o demotestchicken.sh](https://raw.githubusercontent.com/garrata/carrepairdemo/master/demotestchicken.sh -o demotestchicken.sh)
+
+curl [https://raw.githubusercontent.com/garrata/carrepairdemo/master/demotestsubaru.sh -o demotestsubaru.sh](https://raw.githubusercontent.com/garrata/carrepairdemo/master/demotestsubaru.sh -o demotestsubaru.sh)
+
+You should see output similar to below.
+
+![image-20200622170001131](/Users/muralidhar/Murali/Work/Code Patterns/2CodeRepos/2020/build-an-integration-application-using-ibm-cloud-pak-for-integration/images/image-20200622170001131.png)
+
+We then need to make the scripts executable – in the terminal window, enter the following two commands.
+
+```
+chmod +x demotestchicken.sh
+
+chmod +x demotestsubaru.sh
+```
+
+Next we need to setup the variables so that our script calls the API in the correct place with the correct credentials.
 
 ### 7.4 Setting Environment Variables to test in the ACE Designer
 
@@ -1146,7 +1168,7 @@ Demotestchicken.sh will give an error as there is no car, but demotestsubaru.sh 
 
 In this tutorial we saw how we used IBM Cloud Pak for Integration to build an integration flow application, Car Repair Claim. The flow connected to various other services, both IBM and non-IBM services. We used no code/low code approach to build the application. The coomplete integration of application is a matter of just a few hours. 
 
-You can continue to host the APIs in API Management capabilities of CP4I. The next part of this series demonstrates how to Manage the API, applying security and rate-plans and publish it to our Self-Service Portal. 
+You can continue to host the APIs in API Management capabilities of ICP4i. The next part of this series demonstrates how to Manage the API, applying security and rate-plans and publish it to our Self-Service Portal. 
 
 
 
