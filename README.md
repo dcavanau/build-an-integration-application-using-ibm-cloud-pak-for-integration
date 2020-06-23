@@ -136,7 +136,7 @@ Salesforce allows you to create developer instances/accounts free of charge. You
 
 IBM Watson is available on the IBM Cloud and also in the IBM Cloud Pak for Data. IBM Cloud lets you create non-expiring free instances of the IBM Watson services that you can use for this tutorial (or anything else)
 
-The IBM Watson Visual Recognition service lets you send a picture (.jpg, .png) to Watson and returns a list of things that Watson can ‘see’. In our case, we will use Watson to check if there is a car in the picture and, in the extended version,  if it is a convertible/roadster car or not. If it’s a roadster, we’ll send it to our partners. If it’s not, we’ll repair it ourselves. If there’s no car in the photo, we’ll send it back and let our customer know.
+The IBM Watson Visual Recognition service lets you send a picture (.jpg, .png) to Watson and returns a list of things that Watson can ‘see’. In our case, we will use Watson to check if there is a car in the picture and, in the extended version, if it is a convertible/roadster car or not. If it’s a roadster, we’ll send it to our partners. If it’s not, we’ll repair it ourselves. If there’s no car in the photo, we’ll send it back and let our customer know.
 
 #### 2.1.3 IBM Watson – Tone Analysis
 
@@ -156,7 +156,7 @@ ServiceNow allows you to create free developer instances as well – you will ne
 
 Our convertible car repair partners speak Spanish – and our Spanish isn’t great (yours might be!).
 
-Fortunately Watson speaks Spanish and many other languages better than we do, so we’ll use Watson to translate our ‘please repair this car’ request before we put the request into our partner’s ServiceNow system.
+Fortunately, Watson speaks Spanish and many other languages better than we do, so we’ll use Watson to translate our ‘please repair this car’ request before we put the request into our partner’s ServiceNow system.
 
 ### 2.2 IBM Cloud Pak for Integration (ICP4i) Capability list
 
@@ -218,11 +218,11 @@ Later, for extended scenario, we will connect to the following endpoints.
 - IBM Watson Language Translation
 - ServiceNow
 
->  During the execution of this content, if you find inconsistency in service names in screenshots you can safely ignore them. The flow and method should still hold good.
+> During the execution of this content, if you find inconsistency in service names in screenshots you can safely ignore them. The flow and method should still hold good.
 
 ### 3.1 Setting up IBM Watson Services
 
-We will set up Watson Visual Recogniton and Tone Analysis.
+We will set up Watson Visual Recognition and Tone Analysis.
 
 You will need an IBM Cloud account to do this. You can use your existing one if you wish or you can set up a new one. 
 
@@ -303,7 +303,7 @@ Go to https://developer.salesforce.com and click on `sign up`
 
 Note that this is NOT the same as `salesforce.com -> try for free`. **You will need a developer account to use this tutorial**. You can use a webmail email address to sign up if you wish, rather than your company one.
 
-(we emphasize this a lot but on of the most common reasons for `My integration to Salesforce doesn’t work` is that the account being used is not a developer one).
+(we emphasize this a lot but one of the most common reasons for `My integration to Salesforce doesn’t work` is that the account being used is not a developer one).
 
 Once you have a salesforce developer account, log in to check it – you’ll get to something like this:
 
@@ -347,7 +347,7 @@ Scroll down to the `Schematics workspaces` section and click on the workspace yo
 
 If you see any certificate issue, you can select to proceed to unsafe website/link. You’ll be presented with a login screen to ICP4i. Use `admin` as username and the password that you set while following [Provisioning instructions](./Provisioning.md). Click on `Login`. 
 
-Click on `Skip Welcome` , if a welcome page is displayed. 
+Click on `Skip Welcome`, if a welcome page is displayed. 
 
 Welcome to ICP4i! You’re now at the home screen showing all the capabilities of the pak, brought together in one place.
 
@@ -447,7 +447,7 @@ IMPORTANT: DON’T MOVE ON YET! You’ll see `Account 1` as the name of the acco
 
 WE NEED TO RENAME THE ACCOUNT FOR THIS TASK TO WORK SEAMLESSLY (we’ll tell you how to fix it if you don’t later….but it’s easier if you do!)
 
-ICP4i lets you have multiple accounts for connecting to each type of system. For example you could have a DEV account, a TEST account and a PROD account. Or you may have a USA instance and an EU instance. The name is what the integrations use to reference the correct account. You can connect your connectors to as many places as you wish – there’s no extra charge – all connectors are included.
+ICP4i lets you have multiple accounts for connecting to each type of system. For example, you could have a DEV account, a TEST account and a PROD account. Or you may have a USA instance and an EU instance. The name is what the integrations use to reference the correct account. You can connect your connectors to as many places as you wish – there’s no extra charge – all connectors are included.
 
 To rename your account, Click the three dots menu and click `rename account`
 
@@ -457,7 +457,7 @@ In the dialog box, name the account `App Connect Trial` (exactly as shown – ca
 
 <img src="./images/image-20200616100427281.png" alt="image-20200616100427281" width="50%" />
 
-You connector should now look like this:
+Your connector should now look like this:
 
 <img src="./images/image-20200616100502762.png" alt="image-20200616100502762" width="50%" />
 
@@ -471,7 +471,7 @@ Select the Local connector (if asked – you may not be) and click Continue
 
 <img src="./images/image-20200616100752616.png" alt="image-20200616100752616" width="50%" />
 
-For this connector, we’ll need the URL and the API key that we got earlier: Enter them in the dialog below – (you won’t need the User name and Password). 
+For this connector, we’ll need the URL and the API key that we got earlier: Enter them in the dialog below – (you won’t need the Username and Password). 
 
 Note: Your URL may be different to our screenshot – it depends in which cloud region your service is running. Click `Connect`
 
@@ -479,7 +479,7 @@ Note: Your URL may be different to our screenshot – it depends in which cloud 
 
 And we’re connected!
 
-IMPORTANT – FOR THE TASK, RENAME THE ACCOUNT to `App Connect Trial`. (use the three dots menu and click `Rename Account` )
+IMPORTANT – FOR THE TASK, RENAME THE ACCOUNT to `App Connect Trial`. (use the three dots menu and click `Rename Account`)
 
 <img src="./images/image-20200616101114113.png" alt="image-20200616101114113" width="50%" />
 
@@ -497,7 +497,7 @@ Click `Connect` and select `Local` for the connector location (if asked) then en
 
 Click `Connect`
 
-IMPORTANT – FOR THIS TUTORIAL, RENAME THE ACCOUNT to `App Connect Trial`. (use the three dots menu and click `Rename Account` )
+IMPORTANT – FOR THIS TUTORIAL, RENAME THE ACCOUNT to `App Connect Trial`. (use the three dots menu and click `Rename Account`)
 
 It should look like this:
 
@@ -511,7 +511,7 @@ If you don’t rename your accounts, you’ll need to edit the flow to point to 
 
 Just one more endpoint to go, then we can look at API flows.
 
-Scroll down to the Salesforce connector. There may be multiple types of salesforce connector shown , pick the first one just called `Salesforce`.
+Scroll down to the Salesforce connector. There may be multiple types of salesforce connector shown, pick the first one just called `Salesforce`.
 
 (You may see there are already accounts created – we’ll be creating a new one to connect to your Salesforce account anyway – don’t use the existing accounts – you won’t be able to see where your integrations go..)
 
@@ -571,7 +571,7 @@ Click on Reset Security Token Button and it will send the **newly generated secu
 
 To populate the Password field on the connector account screen you will need to *concatenate the Password used to log into the Salesforce account with the Security Token received via above step* as shown below:
 
-For example if you Salesforce password is 'myGreatPassword’ and your Salesforce security token is ‘2325jsdhew4312hs534dh’ then you should enter
+For example, if your Salesforce password is 'myGreatPassword’ and your Salesforce security token is ‘2325jsdhew4312hs534dh’ then you should enter
 
 `myGreatPassword2325jsdhew4312hs534dh` in the ‘password’ field.
 
@@ -851,7 +851,7 @@ The request is:
 
 "LicensePlate":"SUBARU1",
 
-"DescriptionOfDamage":"You cannot see it from the outside but the engine will not start any more. This car is rubbish and I hate it. Fix it quickly or I will sue!",
+"DescriptionOfDamage":"You cannot see it from the outside, but the engine will not start any more. This car is rubbish and I hate it. Fix it quickly or I will sue!",
 
 "PhotoOfCar":"<<Base 64 picture>>”,
 
@@ -1010,7 +1010,7 @@ Click again, and you’ll drill down further and see the following:
 
 You can see the REST operation, the base URL and you can even download the OpenAPI (also called swagger) document.
 
-We can test this if we wish! (It’s not compulsory…). Use the same curl scripts that we used for designer, but change the URL to point to the REST API Base URL given in the UI. At this point though, our integration will fail as it has no credentials….
+We can test this if we wish! (It’s not compulsory…). Use the same curl scripts that we used for designer but change the URL to point to the REST API Base URL given in the UI. At this point though, our integration will fail as it has no credentials….
 
 (Not that you’ll need to make sure you have the /CarRepairClaim at the end of the URL).
 
@@ -1172,4 +1172,7 @@ You can continue to host the APIs in API Management capabilities of ICP4i. The n
 
 
 
-Related links
+## 11. Related links
+
+- https://www.ibm.com/in-en/cloud/cloud-pak-for-integration
+- https://developer.ibm.com/integration/

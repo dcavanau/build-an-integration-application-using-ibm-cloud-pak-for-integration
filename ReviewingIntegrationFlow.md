@@ -4,9 +4,9 @@ Login to ICP4i and navigate to App Connect Designer. Click on the `Car Insurance
 
 <img src="/Users/muralidhar/Murali/Work/Code Patterns/2CodeRepos/2020/build-an-integration-application-using-ibm-cloud-pak-for-integration/images/image-20200616161203051.png" alt="image-20200616161203051" style="zoom:50%;" align="left"/>
 
-What you can see  first is our API model.
+What you can see first is our API model.
 
-App Connect Designer builds your API for you – you don’t need to worry about OpenAPI specs or Swagger editors – it’s all built in. To create your API, you just type in the names of the fields you want to use in plain English. If you want, you can use objects for complex structures but we won’t here
+App Connect Designer builds your API for you – you don’t need to worry about OpenAPI specs or Swagger editors – it’s all built in. To create your API, you just type in the names of the fields you want to use in plain English. If you want, you can use objects for complex structures, but we won’t here.
 
 These are the fields we are going to use for our API – we’ve imported them to save you time. You can rename them if you wish but if you do, our test scripts for the APIs won’t match – or work, so leave them as they are for now.
 
@@ -144,7 +144,7 @@ It means Watson has returned an Image object.
 
 --------In the Class, there is a class name and a score – amongst other things.
 
-In all of that, we need to say ‘Hey Watson – thanks for the data: Can you see a car?’ Normally we’d end up coding loops around arrays and if/thens to find it…
+In all of that, we need to say, ‘Hey Watson – thanks for the data: Can you see a car?’ Normally we’d end up coding loops around arrays and if/thens to find it…
 
 App connect does it by using a formula – just like a spreadsheet.
 
@@ -228,7 +228,7 @@ Success! Hooray, let’s check our result. Click `View details`
 
 <img src="/Users/muralidhar/Murali/Work/Code Patterns/2CodeRepos/2020/build-an-integration-application-using-ibm-cloud-pak-for-integration/images/image-20200616175326523.png" alt="image-20200616175326523" style="zoom:70%;" align="left"/>
 
-There’s our test results, right in the tooling, right from the real system in the cloud. This works with all of the connectors such as Watson in our flows here. It’s a great way of checking your integration calls work the way you want them to without having to test the whole flow.
+There are our test results, right in the tooling, right from the real system in the cloud. This works with all of the connectors such as Watson in our flows here. It’s a great way of checking your integration calls work the way you want them to without having to test the whole flow.
 
 Now we have the ID that we need, let’s create our Salesforce case. Click on the Salesforce – Create case node. Note that we just re-use the same connector but with a different operation and data.
 
@@ -254,7 +254,7 @@ Note that we use the Case ID that is a returned value from the ‘Create Case’
 
 We store this in Salesforce for future reference – if the customer is angry or upset, we may wish to take further action or treat them more carefully.
 
-First we’ll use the Watson Tone Analyzer; Click on `Get tone analysis`
+First, we’ll use the Watson Tone Analyzer; Click on `Get tone analysis`
 
 <img src="/Users/muralidhar/Murali/Work/Code Patterns/2CodeRepos/2020/build-an-integration-application-using-ibm-cloud-pak-for-integration/images/image-20200616175622530.png" alt="image-20200616175622530" style="zoom:60%;" align="left"/>
 

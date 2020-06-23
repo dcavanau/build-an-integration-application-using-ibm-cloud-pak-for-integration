@@ -1,7 +1,7 @@
 # Setting up Cloud Pak for Integration on IBM Cloud
 ### 1. Get sizing information
 
-We will be deploying ICP4i on OpenShift cluster. ICP4i instance will have App Connect and API Connect capabilities added to it. So the amount of resources required for ICP4i, with the capabilities mentioned, installation will be huge. Let's get that information before we get to provisioning OpenShift cluster.
+We will be deploying ICP4i on OpenShift cluster. ICP4i instance will have App Connect and API Connect capabilities added to it. So, the amount of resources required for ICP4i, with the capabilities mentioned, installation will be huge. Let's get that information before we get to provisioning OpenShift cluster.
 
 - Login to your IBM Cloud account. On the dashboard, click on `Catalog`. Search for `Cloud Pak for Integration` and click on the `Cloud Pak for Integration` tile as shown in below image.
 
@@ -13,9 +13,7 @@ Under `Configure your installation environment`, make a note of the minimum requ
 
 
 
-
-
-For each of the additional capabilities, requirements are specified. However for us we do not need to calculate individual requirements. We have an option with all required components. Scroll down, in configuration section, notice the `demoPreparation` configuration. We will be using this configuration to install ICP4i. Make a note of additional requirements for this configuration in description. 
+For each of the additional capabilities, requirements are specified. However, for us we do not need to calculate individual requirements. We have an option with all required components. Scroll down, in configuration section, notice the `demoPreparation` configuration. We will be using this configuration to install ICP4i. Make a note of additional requirements for this configuration in description. 
 
 <img src="./images/image-20200610151658967.png" alt="image-20200610151658967" style="zoom:40%;" align="left" />
 
