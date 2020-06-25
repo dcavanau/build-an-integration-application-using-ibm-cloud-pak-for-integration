@@ -6,35 +6,21 @@
 
 Every enterprise in today's markets must offer robust digital products and services, often requiring integration of complex capabilities and systems to deliver one coherent whole. [IBM Cloud Pak for Integration](https://cloud.ibm.com/docs/cloud-pak-integration?topic=cloud-pak-integration-getting-started) offers a simplified solution to this integration challenge, allowing the enterprise to modernize its processes while positioning itself for future innovation. Once installed, IBM Cloud Pak for Integration eases monitoring, maintenance and upgrades, helping the enterprise stay ahead of the innovation curve.
 
-In this tutorial will use Integration Designer to create an API which takes a car repair claim request, complete with a photograph of the car, and integrates with a SaaS CRM system and IBM’s Watson AI to create a car repair case with all the correct details loaded into the SaaS system. and data routed to the correct location based on the image contents; all in a few seconds before returning a response to the customer.
+In this tutorial we will show how to build an Integration application using IBM Cloud Pak for Integration. We will consider a car repair case where the application receives request with photo of the car along with other details. The application will integrate with a SaaS CRM system (Salesforce), Watson Visual Recognition service, Watson Tone Analyzer service. The application will respond with details like estimated bill, estimated time which can help with insurance claim process.
 
-As an ‘extension’ we check if the car is a convertible/roadster.
+In the part2 of this series, we will extend this solution to integrate this application with a partner application. e.g. If the car is a specialist car, then send the request to partner application which creates a case on ServiceNow and use Watson Language Translator service if the partner doesn't understand English.
 
- If it is, we translate the request into Spanish for our Spanish-speaking partner and create an incident their ServiceNow SaaS system, complete with car photograph.
-
-The ‘extension’ will only be briefly described – we will ensure we build an end-to-end managed API before discussing the extended scenario.
-
-*Going through this content may look long but don’t be put off by the sheer number of pages: Most of them are filled with screenshots and descriptions– there’s not that much “work” to actually do – we’ve created a lot of things for you to use ready-to-go.*
+*Going through this content may look long but don’t be put off by the sheer length of content: Most of them are filled with screenshots and descriptions– there’s not that much “work” to actually do – we’ve created a lot of things for you to use ready-to-go.*
 
 Business Scenario:
 
-- We are a Car Repair company: We take in vehicles with problems and repair them – seems simple but..
+A Car Repair company receives vehicles with problems and repair them. It involves the following:
 
-  - We want to gain business advantage by allowing multiple car leasing companies to use us to repair their cars – these companies insist that we expose APIs for them to call to do business with them.
-  
-  - We want to allow their customers to book their cars in for repair and get an estimate for price and number of days in real time – in seconds. Later we will build more APIs to allow customers to query the status of their repairs, or make updates or add comments to their repair cases.
-  
-  - We want to allow them to send photos of their cars so we can check for type, damage etc.
-  
-  - We want to check for errors and issues up-front as quickly as possible to feed back to the customer in real time. Photo not valid? No car in the photo? We’ll tell you instantly so you can re-submit.
-  
-  - We want to minimize manual processes and have the repair request automatically create a repair case in our CRM system (Salesforce). If a customer wants to book a repair at 3am on a Sunday, they can – it’s their choice.
-  
-  - We are wanting to grow our business fast with this new model and expect the use of APIs to really increase the number of requests we get. We need our solution to be scalable and highly available.
-  
-    
-  
-  <img src="./images/image-20200608183714387.png" alt="image-20200608183714387" />
+- Allow customers to book their cars in for repair and get an estimate for price and number of days in real time, based on the car damage photograph.
+- Minimize manual processes and have the repair request automatically create a repair case in Salesforce. 
+- Expose the APIs for partners to use the system and to secure and manage APIs.
+
+<img src="./images/image-20200608183714387.png" alt="image-20200608183714387" />
 
 
 
