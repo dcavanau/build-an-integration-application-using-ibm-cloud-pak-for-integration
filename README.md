@@ -13,6 +13,7 @@ Consider a car claim processing scenario that is quite a tedious process. It inv
 - If the car requires a specialist, raise a repair request with a partner.
 
 All this requires manual intervention and increases the claim processing time. Can we automate this process and reduce manual intervention thereby reducing the claim processing time? 
+
 We can do that by integrating our application with various services, and also using Artificial Intelligence. We demonstrate such a possibility in this tutorial by using `ICP4i` for application integration, and `Watson Visual Recognition(VR)`.
 
 In this tutorial we will show how to build such an integrated application using IBM Cloud Pak for Integration. An application receives an input with pictures of the car damage along with other details. The photographs and other accompanying details are processed, and the application will respond with details like estimated bill, estimated time which can help with insurance claim process. 
