@@ -19,7 +19,7 @@ We can do that by integrating our application with various services, and also us
 In this tutorial we will show how to build such an integrated application using IBM Cloud Pak for Integration. An application receives an input with pictures of the car damage along with other details. The photographs and other accompanying details are processed, and the application will respond with details like estimated bill, estimated time which can help with insurance claim process. 
 This is achieved by integrating the application with a SaaS CRM system (Salesforce), Watson Visual Recognition service & Watson Tone Analyzer service. 
 
-In the part2 of this series, we will extend this solution to integrate this application with a partner application. e.g. If the car requires a specialist to repair, then send the request to partner application which creates a case on ServiceNow, and also use Watson Language Translator service if the partner doesn't understand English.
+In the Part II of this series, we will extend this solution to integrate this application with a partner application. e.g. If the car requires a specialist to repair, then send the request to partner application which creates a case on ServiceNow, and also use Watson Language Translator service if the partner doesn't understand English.
 
 *Going through this content may look long but don’t be put off by the sheer length of content: Most of them are filled with screenshots and descriptions– there’s not that much “work” to actually do – we’ve created a lot of things for you to use ready-to-go.*
 
