@@ -6,18 +6,19 @@
 
 Every enterprise in today's markets must offer robust digital products and services, often requiring integration of complex capabilities and systems to deliver one coherent whole. [IBM Cloud Pak for Integration](https://cloud.ibm.com/docs/cloud-pak-integration?topic=cloud-pak-integration-getting-started) offers a simplified solution to this integration challenge, allowing the enterprise to modernize its processes while positioning itself for future innovation. Once installed, IBM Cloud Pak for Integration eases monitoring, maintenance and upgrades, helping the enterprise stay ahead of the innovation curve.
 
-In this tutorial we will show how to build an Integration application using IBM Cloud Pak for Integration. We will consider a car repair case where the application receives request with photo of the car along with other details. The application will integrate with a SaaS CRM system (Salesforce), Watson Visual Recognition service, Watson Tone Analyzer service. The application will respond with details like estimated bill, estimated time which can help with insurance claim process.
+In this tutorial we will show how to build an Integration application using IBM Cloud Pak for Integration. We will consider an insurance claim processing  scenario where the application receives an input with pictures of the car damage along with other details. The application will integrate with a SaaS CRM system (Salesforce), Watson Visual Recognition service, Watson Tone Analyzer service to significantly reduce the time for claim processing. The application will respond with details like estimated bill, estimated time which can help with insurance claim process.
 
-In the part2 of this series, we will extend this solution to integrate this application with a partner application. e.g. If the car is a specialist car, then send the request to partner application which creates a case on ServiceNow and use Watson Language Translator service if the partner doesn't understand English.
+In the part2 of this series, we will extend this solution to integrate this application with a partner application. e.g. If the car requires a specialist to repair, then send the request to partner application which creates a case on ServiceNow, and also use Watson Language Translator service if the partner doesn't understand English.
 
 *Going through this content may look long but don’t be put off by the sheer length of content: Most of them are filled with screenshots and descriptions– there’s not that much “work” to actually do – we’ve created a lot of things for you to use ready-to-go.*
 
 Business Scenario:
 
-A Car Repair company receives vehicles with problems and repair them. It involves the following:
+A Car Repair company receives vehicles with problems and repairs them. It involves the following steps:
 
-- Allow customers to book their cars in for repair and get an estimate for price and number of days in real time, based on the car damage photograph.
-- Minimize manual processes and have the repair request automatically create a repair case in Salesforce. 
+- Allow customers to book their cars in for repair.
+- Provide a price and time estimate for repairing the vehicle in real time based on the photographs of car damage.
+- Minimize manual processes with the repair request automatically creating a repair case in Salesforce. 
 - Expose the APIs for partners to use the system and to secure and manage APIs.
 
 <img src="./images/image-20200608183714387.png" alt="image-20200608183714387" />
@@ -32,9 +33,9 @@ A Car Repair company receives vehicles with problems and repair them. It involve
 
 # Flow
 
-1. User sends car repair request to API (API Connect).
+1. User sends car repair request by invoking an API (API Connect) with photographs of car damage.
 2. User request is forwarded to integration flow.
-3. Use IBM Watson Visual Recognition to analyze the photo. If it is not a valid picture, Watson will return an error immediately to the user calling the API. Check that Watson can `see` a car in the picture – if not, we will immediately respond back with an error saying ‘There is no car in this picture’ so the error can be corrected immediately.
+3. Use IBM Watson Visual Recognition(VR) to analyze the photographs. If it is not a valid picture, Watson VR will return an error immediately to the user calling the API. Check that Watson VR can `see` a car in the picture – if not, application will immediately respond back with an error saying ‘There is no car in this picture’ so the error can be corrected immediately.
 4. Create a `Case` in Salesforce with the data from the API. This Case is where we store the details and progress of our repair. Also, add an attachment of the photograph to Salesforce so that we have the image stored in our system.
 5. Analyze the description of the problem as described by the customer using IBM Watson Tone Analysis. We store this in Salesforce for future reference – if the customer is angry or upset, we may wish to take further action or treat them more carefully.
 6. This is an extended scenario, wherein if the car is a specialist car (identified by Visual Recognition Service) it is sent to partner for repair. The partner speaks Spanish and and we'll use IBM Watson language translator to translate our request into Spanish before we send it to them
