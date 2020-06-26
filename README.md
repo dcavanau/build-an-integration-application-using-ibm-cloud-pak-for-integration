@@ -6,7 +6,17 @@
 
 Every enterprise in today's markets must offer robust digital products and services, often requiring integration of complex capabilities and systems to deliver one coherent whole. [IBM Cloud Pak for Integration](https://cloud.ibm.com/docs/cloud-pak-integration?topic=cloud-pak-integration-getting-started) offers a simplified solution to this integration challenge, allowing the enterprise to modernize its processes while positioning itself for future innovation. Once installed, IBM Cloud Pak for Integration eases monitoring, maintenance and upgrades, helping the enterprise stay ahead of the innovation curve.
 
-In this tutorial we will show how to build an Integration application using IBM Cloud Pak for Integration. We will consider an insurance claim processing  scenario where the application receives an input with pictures of the car damage along with other details. The application will integrate with a SaaS CRM system (Salesforce), Watson Visual Recognition service, Watson Tone Analyzer service to significantly reduce the time for claim processing. The application will respond with details like estimated bill, estimated time which can help with insurance claim process.
+Consider a car claim processing scenario that is quite a tedious process. It involves the following steps:
+- Create a repair request.
+- Assess the damage to the car. 
+- Estimate price and time for repair.
+- If the car requires a specialist, raise a repair request with a partner.
+
+All this requires manual intervention and increases the claim processing time. Can we automate this process and reduce manual intervention thereby reducing the claim processing time? 
+We can do that by integrating our application with various services, and also using Artificial Intelligence. We demonstrate such a possibility in this tutorial by using `ICP4i` for application integration, and `Watson Visual Recognition(VR)`.
+
+In this tutorial we will show how to build such an integrated application using IBM Cloud Pak for Integration. An application receives an input with pictures of the car damage along with other details. The photographs and other accompanying details are processed, and the application will respond with details like estimated bill, estimated time which can help with insurance claim process. 
+This is achieved by integrating the application with a SaaS CRM system (Salesforce), Watson Visual Recognition service & Watson Tone Analyzer service. 
 
 In the part2 of this series, we will extend this solution to integrate this application with a partner application. e.g. If the car requires a specialist to repair, then send the request to partner application which creates a case on ServiceNow, and also use Watson Language Translator service if the partner doesn't understand English.
 
@@ -35,8 +45,8 @@ A Car Repair company receives vehicles with problems and repairs them. It involv
 
 1. User sends car repair request by invoking an API (API Connect) with photographs of car damage.
 2. User request is forwarded to integration flow.
-3. Use IBM Watson Visual Recognition(VR) to analyze the photographs. If it is not a valid picture, Watson VR will return an error immediately to the user calling the API. Check that Watson VR can `see` a car in the picture – if not, application will immediately respond back with an error saying ‘There is no car in this picture’ so the error can be corrected immediately.
-4. Create a `Case` in Salesforce with the data from the API. This Case is where we store the details and progress of our repair. Also, add an attachment of the photograph to Salesforce so that we have the image stored in our system.
+3. IBM Watson Visual Recognition(VR) analyzes the photographs. If it is not a valid picture, Watson VR will return an error immediately to the user calling the API. Check that Watson VR can `see` a car in the picture – if not, application will immediately respond back with an error saying ‘There is no car in this picture’ so the error can be corrected immediately.
+4. A `Case` is created in Salesforce with the data from the API. This Case is where we store the details and progress of our repair. Also, an attachment of the photograph is added to Salesforce so that we have the image stored in our system.
 5. Analyze the description of the problem as described by the customer using IBM Watson Tone Analysis. We store this in Salesforce for future reference – if the customer is angry or upset, we may wish to take further action or treat them more carefully.
 6. This is an extended scenario, wherein if the car is a specialist car (identified by Visual Recognition Service) it is sent to partner for repair. The partner speaks Spanish and and we'll use IBM Watson language translator to translate our request into Spanish before we send it to them
 7. This is an extended scenario as well. Partner uses ServiceNow, not Salesforce so we need to create an incident in their ServiceNow system – automatically.
@@ -110,7 +120,7 @@ As this is an integration application, we will need systems and services to inte
 
 ### 2.1 List of Systems and Services Endpoints
 
-The systems and services we will use are as follows: Instructions for these are further on
+The systems and services we will use are as follows: Instructions for these are further on...
 
 #### 2.1.1 Salesforce
 
