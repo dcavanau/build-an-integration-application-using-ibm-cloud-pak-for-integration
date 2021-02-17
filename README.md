@@ -63,6 +63,7 @@ A Car Repair company receives vehicles with problems and repair them. It involve
 3. [Getting Started](#3-getting-started)
    1. [Setting up IBM Watson Services](#31-setting-up-ibm-watson-services)
    2. [Setting up SalesForce](#32-setting-up-salesforce)
+   3. [Setting up ServiceNow](#33-setting-up-servicenow)
 4. [Setting up Cloud Pak for Integration instance on IBM Cloud](#4-setting-up-cloud-pak-for-integration-instance-on-ibm-cloud)
 5. [Building Your Integration](#5-building-your-integration)
 6. [Testing our API Integration Flow](#6-testing-our-api-integration-flow)
@@ -300,6 +301,24 @@ Once you have a salesforce developer account, log in to check it – you’ll ge
 You will require admin level access to your Salesforce account.
 
 When you create a free Salesforce account to test, make sure that you create a [Developer account](https://developer.salesforce.com/) rather than a Trial account. If you connect to App Connect with a 'Free Trial' account, the Salesforce integrations will not work.
+
+### 3.3 Setting up ServiceNow
+
+Salesforce is a ITSM system hosted as a SaaS in the cloud.
+
+We will need a **developer** account to use for testing – if you already have a ServiceNow developer account, you can use that – if not, you can sign up for a free developer account now.
+
+Go to https://developer.servicenow.com and click on `sign in`
+
+<img src="./images/image-20210217125016.png" alt="image-20210217125016" />
+
+Once you have a ServiceNow developer account, log in to check it – you’ll get to something like this:
+
+<img src="./images/image-20210217105918.png" alt="image-20210217105918" />
+
+You will need to create a ServiceNow instance that can be used. Click on `Request an instance` to create an instance to use. A pop up will be displayed showing the instance URL, user ID and password. Make note of these values. 
+
+
 
 OK, we have our endpoints – we’re ready to integrate!
 
