@@ -316,7 +316,7 @@ Once you have a ServiceNow developer account, log in to check it – you’ll ge
 
 <img src="./images/image-20210217105918.png" alt="image-20210217105918" />
 
-You will need to create a ServiceNow instance that can be used. Click on `Request an instance` to create an instance to use. A pop up will be displayed showing the instance URL, user ID and password. Make note of these values. 
+You will need to create a ServiceNow instance that can be used. Click on `Request an instance` to create an instance to use. A pop up will be displayed showing the instance URL, user ID and password. Make note of these values.
 
 
 
@@ -358,15 +358,11 @@ Welcome to ICP4i! You’re now at the home screen showing all the capabilities o
 
 We’re going to be using API Connect and App Connect for this tutorial.
 
-![image-20200615230600574](./images/image-20200615230600574.png)
+![image-20210217132159](./images/image-20210217132159.png)
 
 
 
 Click `View instances` to see the capabilities added in ICP4i instance using the option `demoPreparation` while installing ICP4i.
-
-![image-20200615231154274](./images/image-20200615231154274.png)
-
-
 
 You can see that we have `App Connect Designer` (the tooling for building integrations), the `App Connect Dashboard` (this is what manages the integration runtimes) and `API Connect` (for managing APIs).
 
@@ -374,13 +370,13 @@ You can see that we have `App Connect Designer` (the tooling for building integr
 
 At any time, we can use the menu to navigate between these capabilities, as well as using the platform home screen. Use the hamburger menu at the top left like so:
 
-<img src="./images/image-20200615231615577.png" alt="image-20200615231615577" width="47%" />
+<img src="./images/image-20210217141902.png" alt="image-20210217141902" width="47%" />
 
 
 
 > *Occasionally, in this demo environment, you might find that the navigation menu shows ‘0’ instances of the capabilities. Don’t worry, everything is still there!*
 
-*If this happens, click on `Platform home` in the menu, then click `View Instances` tab. After this, the menu will work again!*
+> *If this happens, click on `Platform home` in the menu, then click `View Instances` tab. After this, the menu will work again!*
 
 
 
@@ -388,7 +384,7 @@ At any time, we can use the menu to navigate between these capabilities, as well
 
 Click on `ace-designer-demo` under `App Connect`. You’ll arrive at the App Connect Designer Dashboard here:
 
-![image-20200615232058774](./images/image-20200615232058774.png)
+![image-20210217143058](./images/image-20210217143058.png)
 
 This is where we can create all of our API integration flows and also manage our connectivity to our services and endpoints. You can create many integration flows and manage them all here.
 
@@ -514,6 +510,123 @@ If you don’t rename your accounts, you’ll need to edit the flow to point to 
 
 ### 5.4 Setting up the Salesforce Connection
 
+Scroll down to the Salesforce connector. There may be multiple types of salesforce connector shown, pick the first one just called `Salesforce`.
+
+(You may see there are already accounts created – we’ll be creating a new one to connect to your Salesforce account anyway – don’t use the existing accounts – you won’t be able to see where your integrations go..)
+
+Click `Add a new account` if there are existing accounts, or just click `Connect` if this is the first one.
+
+<img src="./images/image-20200616103600066.png" alt="image-20200616103600066" width="50%" />
+
+Select a Local connector location (if asked – you may not be asked) and click ‘Continue’
+
+<img src="./images/image-20200616103813680.png" alt="image-20200616103813680" width="50%" />
+
+You’ll now be asked for the Salesforce credentials – how do you get these? Follow the steps below. 
+
+Salesforce needs more than just your userid and password – it needs a client Id and Client Secret as well. Also, what you type in the ‘Password’ field in the connector isn’t just your password that you log in with.
+
+The fields we need are shown below
+
+<img src="./images/image-20200616103931845.png" alt="image-20200616103931845" width="50%" />
+
+You will require admin level access to your Salesforce account. 
+
+ When youa free Salesforce account to test, make sure that you created a [Developer account](https://developer.salesforce.com/) rather than a Trial account. If you connect to App Connect with a “Free Trial” account, the Salesforce integrations may not work.
+
+Login to your Salesforce Developer account – you should see the screen like below:
+
+![image-20200616104029898](./images/image-20200616104029898.png)
+
+To get your **loginURL**, click on your user profile. The URL text below your Account Name is your login URL – BUT WITHOUT THE LEADING HTTPS:// .
+
+![image-20200616104103155](./images/image-20200616104103155.png)
+
+ 
+
+Insert the **login URL** into the connector account form as shown below:
+
+IMPORTANT: You MUST enter the ‘https://’ part as well – it won’t work if you just copy/paste from the salesforce screen e.g. “um1.salesforce.com” will **not** work. “https://um1.salesforce.com” will!
+
+<img src="./images/image-20200616104134388.png" alt="image-20200616104134388" width="50%" />
+
+Next we will need to **retrieve Security Token**. For this click on your user profile and select the Settings option in the profile panel.
+
+![image-20200616104211975](./images/image-20200616104211975.png)
+
+Under Settings, find and click the “Reset Security Token” option
+
+(you may need to go to ‘Switch to lightning experience’ to see this)
+
+<img src="./images/image-20200616111047905.png" alt="image-20200616111047905" width="20%" />(On the top right if you see it)
+
+
+
+
+
+![image-20200616111152457](./images/image-20200616111152457.png)
+
+Click on Reset Security Token Button and it will send the **newly generated security token to your admin email address**. Use the token for your credentials. 
+
+To populate the Password field on the connector account screen you will need to *concatenate the Password used to log into the Salesforce account with the Security Token received via above step* as shown below:
+
+For example, if your Salesforce password is 'myGreatPassword’ and your Salesforce security token is ‘2325jsdhew4312hs534dh’ then you should enter
+
+`myGreatPassword2325jsdhew4312hs534dh` in the ‘password’ field.
+
+<img src="./images/image-20200616111407934.png" alt="image-20200616111407934" width="50%" />
+
+Next we will retrieve the **Client ID and Secret**
+
+**Click the ‘setup’ cogwheel at the top right.**
+
+On the left-hand Finder panel go to:
+**PLATFORM TOOLS > Apps > App Manager**
+
+![image-20200616111549686](./images/image-20200616111549686.png)
+
+You then want to **create a New Connected App** or use an existing one. Steps for creating a new app are as follows:
+
+![image-20200616111625258](./images/image-20200616111625258.png)
+
+Provide a Connect App Name and an API Name is automatically generated for you. Provide a Contact Email (usually admin email address). Please make sure you Enable OAuth Settings and follow steps below to configure the OAuth setting.
+
+![image-20200616111648866](./images/image-20200616111648866.png)
+
+Click on Enable OAuth Settings to get the configuration panel.
+
+Either click on Enable for Device Flow and that will auto-generate a Callback URL or alternately you can provide your own fully qualified Callback URL
+
+Next step is to configure the scope of access for our connectors which will be the Connected App in this case.
+
+Connectors technically only require “data api” - you can optionally choose to enable all the scopes for this connected app.
+
+And then click on Save.
+
+![image-20200616112325268](./images/image-20200616112325268.png)
+
+**It may take several minutes for newly created Connected App to be registered**. Once registered go back to App Manager, select and view the created App
+
+![image-20200616112348717](./images/image-20200616112348717.png)
+
+Use **Consumer Key and Secret as Client ID and Client Secret** respectively as needed in the connector account UI as follows:
+
+<img src="./images/image-20200616112415309.png" alt="image-20200616112415309" width="50%" />
+
+Click Connect – you should see your account created!
+
+IMPORTANT – After all that, we need to rename our account! Don’t forget to use the three dots an rename our account to `App Connect Trial` as shown below.
+
+<img src="./images/image-20200616112510301.png" alt="image-20200616112510301" width="50%" />
+
+Just as an aside, look at the sheer amount of data and functions available through the connector – you can expand them to see what the actions are. As the connectors are metadata driven, if you customize Salesforce with extra or customized fields, the connectors will pick them up automatically.
+
+Great! We’re now all connected up! Let’s go and see our flow!
+
+
+
+### 5.5 Setting up the ServiceNow Connection
+
 Just one more endpoint to go, then we can look at API flows.
 
 Scroll down to the Salesforce connector. There may be multiple types of salesforce connector shown, pick the first one just called `Salesforce`.
@@ -631,7 +744,7 @@ Great! We’re now all connected up! Let’s go and see our flow!
 
 
 
-### 5.5 Importing the Integration flow into designer
+### 5.6 Importing the Integration flow into designer
 
 Login to ICP4i dashboard and go to App Connect Designer. Click on the cogwheel (top right) and select `Dashboard` from the menu.
 
@@ -663,15 +776,15 @@ Click `Add file`. Then click `Import`
 
 
 
-### 5.5 Reviewing our API Integration Flow:
+### 5.7 Reviewing our API Integration Flow:
 
 Refer to ReviewingIntegrationFlow.md
 
-*This section can take some time. If you’re more interested as to how the flow is built, go through this section. If you may be short on time, as the flow is pre-built and we won’t change it you can skip straight to [Starting the flow](#56-starting-the-flow) section.*
+*This section can take some time. If you’re more interested as to how the flow is built, go through this section. If you may be short on time, as the flow is pre-built and we won’t change it you can skip straight to [Starting the flow](#58-starting-the-flow) section.*
 
 Since there are lots of screen shots, so you can read this guide afterwards at your leisure. Also the guide is provided in a different file [here](./ReviewingIntegrationFlow.md).
 
-### 5.6 Starting the flow
+### 5.8 Starting the flow
 
 Now we’ve looked at the integration flow, let’s start it up.
 
